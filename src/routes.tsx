@@ -1,4 +1,5 @@
 import { ReactElement } from 'react'
+import RegisterPage from './pages/register-page/RegisterPage'
 import LoginPage from './pages/login-page/LoginPage'
 import DashboardPage from './pages/dashboard-page/DashboardPage'
 import QuizPage from './pages/quiz-page/QuizPage'
@@ -14,6 +15,11 @@ type Route = {
 
 // Define routes
 const routes: Route[] = [
+    {
+        name: 'Register',
+        path: 'register',
+        element: <RegisterPage />,
+    },
     {
         name: 'Login',
         path: 'login',
