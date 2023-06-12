@@ -1,0 +1,45 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-text {
+  margin-top: 20px;
+}
+
+.animation-container {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.animation-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+.animation-dot-1 {
+  animation: pulse .45s ease 0s infinite alternate;
+}
+.animation-dot-2 {
+  animation: pulse .45s ease .2s infinite alternate;
+}
+.animation-dot-3 {
+  animation: pulse .45s ease .4s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: .25;
+    transform: scale(.75);
+  }
+}
