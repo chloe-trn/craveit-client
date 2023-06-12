@@ -1,38 +1,172 @@
-.App {
-  text-align: center;
+a {
+  color: var(--primary);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, h4 {
+  font-family: var(--heading-font);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 2rem
 }
 
-.App-header {
-  background-color: #282c34;
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+.app {
+  position: relative;
+  background: var(--light-bg);
+  overflow: hidden;
   min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.app .wrapper {
+  padding: 0 15px;
+}
+
+.app.initial .main,
+.app.initial .header,
+.app.initial .footer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.app.initial .header
+ {
+  margin: 20px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app.initial .hamburger {
+  display: none;
+}
+
+.app.initial .inner-wrapper {
+  display: grid;
+}
+
+.app.initial .footer 
+ {
+  margin: 40px 0;
+}
+
+.app.auth .header {
+  background-color: var(--light-bg); 
+}
+
+.app.auth .header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app.auth .header-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app.auth .inner-wrapper {
+  background-color: var(--bg);
+}
+
+.link {
+  transition: all var(--transition);
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-family: var(--body-font);
+  color: var(--primary);
+  text-decoration: underline;
+  cursor: pointer; 
+}
+
+.link:hover {
+  color: var(--secondary);
+}
+
+.btn {
+  transition: all var(--transition);
+  padding: 12px 40px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background-color: var(--primary);
+  color: var(--light-text);
+}
+
+.btn.primary:hover {
+  background-color: var(--tertiary);
+}
+
+.msg {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.msg svg {
+  margin-right: 10px;
+}
+
+.msg.error {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+}
+
+.msg.disclaimer {
+  background-color: var(--disclaimer-bg);
+  color: var(--disclaimer-text);
+}
+
+@media only screen and (min-width: 1024px) {
+  .app.auth {
+    display: flex;
   }
-  to {
-    transform: rotate(360deg);
+
+  .app.auth .header {
+    flex: 0 0 200px; 
+  }
+
+  .app.auth .header .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app.auth .inner-wrapper {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .app.auth .header, .app.auth .inner-wrapper {
+    height: 100vh; 
+    overflow: auto;
+  }
+
+  .app.auth section {
+    padding: 30px 0;
+  }
+
+  .app.auth .footer {
+    text-align: center;
+    flex: 0 0 50px;
   }
 }
