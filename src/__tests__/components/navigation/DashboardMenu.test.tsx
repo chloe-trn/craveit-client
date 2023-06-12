@@ -1,7 +1,7 @@
 import { render, screen } from '../../../test-utils/render-util'
-import DashboardNavigation from '../../../components/navigation/DashboardNavigation'
+import DashboardMenu from '../../../components/navigation/dashboard-menu/DashboardMenu'
 
-describe('DashboardNavigation', () => {
+describe('DashboardMenu', () => {
   test('renders the correct number of navigation items with the correct name and link', () => {
     // arrange
     const expectedItems = [
@@ -11,7 +11,7 @@ describe('DashboardNavigation', () => {
     ]
 
     // act
-    render(<DashboardNavigation />)
+    render(<DashboardMenu />)
     const navigationItems = screen.getAllByRole('link')
 
     // assert
