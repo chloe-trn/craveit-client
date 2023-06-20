@@ -1,0 +1,54 @@
+.question {
+  font-size: 1.65rem;
+  font-weight: bold;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.input-option {
+  position: relative;
+  margin: 20px 10px;
+}
+
+.input-option input[type="checkbox"],
+.input-option input[type="radio"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.input-option label {
+  display: inline-block;
+  padding: 20px;
+  background-color: var(--light-text);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.input-option label:hover{
+  background-color: var(--tertiary);
+}
+
+.input-option input[type="checkbox"]:checked + label,
+.input-option input[type="radio"]:checked + label {
+  background-color: var(--primary);
+  color: var(--light-text);
+}
+
+.btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+.inner-btn-wrapper .btn{
+  margin-left: 25px;
+}
+  
