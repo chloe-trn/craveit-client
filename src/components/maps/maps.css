@@ -18,4 +18,59 @@
   margin: 12px;
   border-radius: 4px;
 }
-  
+
+.autocomplete-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-map-wrapper {
+  display: grid;
+  margin-bottom: 60px;
+}
+
+.input-map-wrapper.map-hidden {
+  margin-bottom: 0;
+}
+
+.column {
+  display: block;
+  max-width: 100%;
+  flex: auto;
+  flex-basis: 0;
+}
+
+.minimap {
+  position: relative;
+  height: 275px;
+  width: 100%; 
+}
+
+.minimap.map-hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) { 
+  .input-map-wrapper {
+    display: flex;
+    margin-bottom: 0;
+  }
+
+  .column {
+    flex: unset;
+    flex-basis: auto;
+  }
+
+  .column.address {
+    flex-grow: 1;
+  }
+
+  .column.map {
+    width: 625px;
+    margin: 35px 0 0 65px;
+  }
+
+  .minimap {
+    height: 520px;
+  }
+}

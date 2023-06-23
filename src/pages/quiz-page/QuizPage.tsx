@@ -12,6 +12,7 @@ import ProgressBar from '../../components/navigation/progress-bar/ProgressBar'
 import QuizSubmissionError from '../error-pages/QuizSubmissionError'
 
 import Address from './questions/Address'
+import AddressMap from './questions/AddressMap'
 import Distance from './questions/Distance'
 import Cuisine from './questions/Cuisine'
 import PriceRange from './questions/PriceRange'
@@ -144,7 +145,7 @@ const QuizPage = () => {
           <>
           <ProgressBar currentQuestion={currentQuestion} totalQuestions={4} />
             <form>
-              {currentQuestion === 1 && <Address quizState={quizState} onNext={nextPage} onReset={handleReset} />}
+              {currentQuestion === 1 && <AddressMap quizState={quizState} onNext={nextPage} onReset={handleReset} />}
               {currentQuestion === 2 && <Distance quizState={quizState} onPrevious={previousPage} onNext={nextPage} onReset={handleReset} />}
               {currentQuestion === 3 && <Cuisine quizState={quizState} onPrevious={previousPage} onNext={nextPage} onReset={handleReset} />}
               {currentQuestion === 4 && <PriceRange quizState={quizState} onPrevious={previousPage} onSubmit={handleSubmit} onReset={handleReset}/>}

@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../app/redux-store'
 
-type Location = {
+export type Location = {
   street: string
   streetContinued: string
   city: string
