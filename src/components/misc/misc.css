@@ -1,0 +1,38 @@
+.rating-wrapper {
+  position: relative;
+  width: 200px;
+  background: var(--black);
+  border-radius: 25px;
+  padding: 2px 8px;
+  margin: 0 0 40px;
+}
+
+.rating-wrapper .star {
+  background-color: var(--grey);
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  margin: 5px;
+  clip-path: polygon(50% 0%, 66% 32%, 100% 38%, 78% 64%, 83% 100%, 50% 83%, 17% 100%, 22% 64%, 0 38%, 34% 32%);
+  overflow: hidden;
+}
+
+.rating-wrapper .star .fill {
+  width: 0;
+  height: 100%;
+  background-color: var(--quaternary);
+}
+
+.rating-wrapper .rating {
+  color: var(--white);
+  width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-radius: 0 25px 25px 0;
+}
