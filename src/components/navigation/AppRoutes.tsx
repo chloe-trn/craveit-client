@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { selectAuth } from '../../services/auth/authSlice'
 
-import ErrorPage from '../../pages/error-page/ErrorPage'
+import PageNotFound from '../../pages/error-pages/PageNotFound'
 import AuthorizationPage from '../../pages/authorization-page/AuthorizationPage'
 import DashboardPage from '../../pages/dashboard-page/DashboardPage'
 import PrivateRoute from './PrivateRoute'
@@ -18,7 +18,7 @@ const AppRoutes = () => {
     <div data-testid='app-routes'>
       <Routes>
         {/* Fallback route for handling 404 errors */}
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="*" element={<PageNotFound />} />
         {/* Redirect to /home if the user is logged in */}
         <Route
           path="/"
