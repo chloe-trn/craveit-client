@@ -24,7 +24,7 @@ describe('PriceRange', () => {
     // arrange and act
     render(<PriceRange quizState={mockQuizState} onPrevious={mockOnPrevious} onSubmit={mockOnSubmit} onReset={mockOnReset}/>)
 
-    fireEvent.click(screen.getByLabelText('$$'))
+    fireEvent.click(screen.getByLabelText('$11-$30'))
 
     const submitButton = screen.getByText('Submit')
 
@@ -36,8 +36,8 @@ describe('PriceRange', () => {
     // arrange and act
     render(<PriceRange quizState={mockQuizState} onPrevious={mockOnPrevious} onSubmit={mockOnSubmit} onReset={mockOnReset}/>)
 
-    fireEvent.click(screen.getByLabelText('$$'))
-    fireEvent.click(screen.getByLabelText('$$'))
+    fireEvent.click(screen.getByLabelText('$11-$30'))
+    fireEvent.click(screen.getByLabelText('$11-$30'))
 
     const submitButton = screen.getByText('Submit')
 

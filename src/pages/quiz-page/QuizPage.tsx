@@ -137,7 +137,7 @@ const QuizPage = () => {
   }, [isSubmitQuizError, submitQuizError])
 
   return (
-    <section>
+    <section className='quiz'>
       {isLoading ? (
         <Loading text='Loading...' />
       ) : (

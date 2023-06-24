@@ -1,22 +1,43 @@
 .question {
-  font-size: 1.65rem;
+  display: inline-block;
+  font-size: 1.875rem;
   font-weight: bold;
+  margin: 30px 0 0;
+}
+
+.sub-question {
+  margin: 0 0 40px;
 }
 
 .input-group {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .input-option {
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  margin: 20px 10px;
+  margin: 20px 0px;
+  height: 12.5vh;
+  border: 2px solid var(--black);
+  border-radius: 20px;
+  width: 45%;
+  text-align: center;
+}
+
+.input-option.checked {
+  background: var(--black);
 }
 
 .input-option input[type="checkbox"],
 .input-option input[type="radio"] {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -25,30 +46,39 @@
 
 .input-option label {
   display: inline-block;
-  padding: 20px;
-  background-color: var(--light-text);
+  color: var(--black);
   cursor: pointer;
   transition: all var(--transition);
 }
 
-.input-option label:hover{
-  background-color: var(--tertiary);
-}
-
 .input-option input[type="checkbox"]:checked + label,
 .input-option input[type="radio"]:checked + label {
-  background-color: var(--primary);
-  color: var(--light-text);
+  color: var(--white);
 }
 
-.btn-wrapper {
-  width: 100%;
+.quiz .btn-wrapper {
+  justify-content: space-between;
+  margin: 40px 0 0;
+}
+
+.quiz .btn-wrapper.two-btn {
+  flex-direction: row;
+}
+
+.quiz .btn-wrapper.three-btn {
+  flex-direction: column-reverse;
+}
+
+.quiz .inner-btn-wrapper {
   display: flex;
   justify-content: space-between;
-  margin: 50px 0;
+  align-items: center;
+  margin: 0 0 50px;
 }
 
-.inner-btn-wrapper .btn{
-  margin-left: 25px;
+@media only screen and (min-width: 1024px) { 
+  .input-option {
+    height: 90px;
+  }
 }
   
