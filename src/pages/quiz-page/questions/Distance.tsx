@@ -58,10 +58,10 @@ const Distance = ({ quizState, onPrevious, onNext, onReset }: DistanceProps) => 
 
   return (
     <>   
-      <label className='question' htmlFor='distance'>How far away from your location are you willing to travel?</label>
-      <p className='sublabel'>Choose one</p>
+      <label className='question' htmlFor='distance'>What's your preferred travel distance from your current location?</label>
+      <p className='sub-question'>Choose one option</p>
       <div className='input-group' id='distance'>
-        <div className='input-option'>
+        <div className={`input-option ${distance === '8046' ? 'checked' : ''}`}>
           <input 
             type='radio' 
             id='distance5' 
@@ -71,7 +71,7 @@ const Distance = ({ quizState, onPrevious, onNext, onReset }: DistanceProps) => 
             onChange={handleRadioChange}/>
           <label htmlFor='distance5'>5 miles</label>
         </div>
-        <div className='input-option'>
+        <div className={`input-option ${distance === '16093' ? 'checked' : ''}`}>
           <input 
             type='radio' 
             id='distance10' 
@@ -81,7 +81,7 @@ const Distance = ({ quizState, onPrevious, onNext, onReset }: DistanceProps) => 
             onChange={handleRadioChange}/>
           <label htmlFor='distance10'>10 miles</label>
         </div>
-        <div className='input-option'>
+        <div className={`input-option ${distance === '24140' ? 'checked' : ''}`}>
           <input 
             type='radio' 
             id='distance15' 
@@ -91,7 +91,7 @@ const Distance = ({ quizState, onPrevious, onNext, onReset }: DistanceProps) => 
             onChange={handleRadioChange}/>
           <label htmlFor='distance15'>15 miles</label>
         </div>
-        <div className='input-option'>
+        <div className={`input-option ${distance === '32187' ? 'checked' : ''}`}>
           <input 
             type='radio' 
             id='distance20' 
@@ -101,7 +101,7 @@ const Distance = ({ quizState, onPrevious, onNext, onReset }: DistanceProps) => 
             onChange={handleRadioChange}/>
           <label htmlFor='distance20'>20 miles</label>
         </div>
-        <div className='input-option'>
+        <div className={`input-option ${distance === '40000' ? 'checked' : ''}`}>
           <input 
             type='radio' 
             id='distance25' 
@@ -112,11 +112,11 @@ const Distance = ({ quizState, onPrevious, onNext, onReset }: DistanceProps) => 
           <label htmlFor='distance25'>25 miles</label>
         </div>
       </div>
-      <div className='btn-wrapper'>
-        <button className='btn primary' onClick={handleReset}>Reset</button>
+      <div className='btn-wrapper three-btn'>
+        <button className='btn tertiary' onClick={handleReset}>Reset</button>
         <div className='inner-btn-wrapper'>
-          <button className='btn primary' onClick={handlePrevious}>Previous</button>
-          <button className='btn primary' onClick={handleNext} disabled={!isDistanceSelected}>Next</button>
+          <button className='btn quaternary' onClick={handlePrevious}>Previous</button>
+          <button className='btn secondary' onClick={handleNext} disabled={!isDistanceSelected}>Next</button>
         </div>
       </div>
     </>

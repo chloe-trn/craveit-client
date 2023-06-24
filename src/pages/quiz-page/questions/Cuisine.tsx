@@ -76,9 +76,9 @@ const Cuisine = ({ quizState, onPrevious, onNext, onReset }: CuisineProps) => {
       <label className='question' htmlFor='cuisine'>
         What type of cuisine are you craving?
       </label>
-      <p className='sublabel'>Choose one or more</p>
+      <p className='sublabel'>Choose one or more options</p>
       <div className='input-group' id='cuisine'>
-        <div className='input-option'>
+        <div className={`input-option ${cuisine.includes('thai') ? 'checked' : ''}`}>
           <input 
             type='checkbox' 
             id='thai' 
@@ -88,7 +88,7 @@ const Cuisine = ({ quizState, onPrevious, onNext, onReset }: CuisineProps) => {
             onChange={handleCheckboxChange}/>
           <label htmlFor='thai'>Thai</label>
         </div>
-        <div className='input-option'>
+        <div className={`input-option ${cuisine.includes('korean') ? 'checked' : ''}`}>
           <input 
             type='checkbox' 
             id='korean' 
@@ -98,7 +98,7 @@ const Cuisine = ({ quizState, onPrevious, onNext, onReset }: CuisineProps) => {
             onChange={handleCheckboxChange}/>
           <label htmlFor='korean'>Korean</label>
         </div>
-        <div className='input-option'>
+        <div className={`input-option ${cuisine.includes('japanese') ? 'checked' : ''}`}>
           <input 
             type='checkbox' 
             id='japanese' 
@@ -108,7 +108,7 @@ const Cuisine = ({ quizState, onPrevious, onNext, onReset }: CuisineProps) => {
             onChange={handleCheckboxChange}/>
           <label htmlFor='japanese'>Japanese</label>
         </div>
-        <div className='input-option'>
+        <div className={`input-option ${cuisine.includes('american') ? 'checked' : ''}`}>
           <input 
             type='checkbox' 
             id='american' 
@@ -118,7 +118,7 @@ const Cuisine = ({ quizState, onPrevious, onNext, onReset }: CuisineProps) => {
             onChange={handleCheckboxChange}/>
           <label htmlFor='american'>American</label>
         </div>
-        <div className='input-option'>
+        <div className={`input-option ${cuisine.includes('vietnamese') ? 'checked' : ''}`}>
           <input 
             type='checkbox' 
             id='vietnamese' 
@@ -128,7 +128,7 @@ const Cuisine = ({ quizState, onPrevious, onNext, onReset }: CuisineProps) => {
             onChange={handleCheckboxChange}/>
           <label htmlFor='vietnamese'>Vietnamese</label>
         </div>
-        <div className='input-option'>
+        <div className={`input-option ${cuisine.includes('mexican') ? 'checked' : ''}`}>
           <input 
             type='checkbox' 
             id='mexican' 
@@ -139,11 +139,11 @@ const Cuisine = ({ quizState, onPrevious, onNext, onReset }: CuisineProps) => {
           <label htmlFor='mexican'>Mexican</label>
         </div>
       </div>
-      <div className='btn-wrapper'>
-        <button className='btn primary' onClick={handleReset}>Reset</button>
+      <div className='btn-wrapper three-btn'>
+        <button className='btn tertiary' onClick={handleReset}>Reset</button>
         <div className='inner-btn-wrapper'>
-          <button className='btn primary' onClick={handlePrevious}>Previous</button>
-          <button className='btn primary' onClick={handleNext} disabled={!isCuisineSelected} >Next</button>
+          <button className='btn quaternary' onClick={handlePrevious}>Previous</button>
+          <button className='btn secondary' onClick={handleNext} disabled={!isCuisineSelected} >Next</button>
         </div>
       </div>
     </>

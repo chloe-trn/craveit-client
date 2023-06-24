@@ -75,9 +75,9 @@ const PriceRange = ({ quizState, onPrevious, onSubmit, onReset }: PriceRangeProp
       <label className='question' htmlFor='priceRange'>
         What's your price range?
       </label>
-      <p className='sublabel'>Choose one or more</p>
+      <p className='sublabel'>Choose one or more options</p>
       <div className='input-group' id='priceRange'>
-        <div className='input-option'>
+        <div className={`input-option ${priceRange.includes('1') ? 'checked' : ''}`}>
           <input 
             type='checkbox' 
             id='priceLow' 
@@ -85,9 +85,9 @@ const PriceRange = ({ quizState, onPrevious, onSubmit, onReset }: PriceRangeProp
             value='1' 
             checked={priceRange.includes('1')}
             onChange={handleCheckboxChange}/>
-          <label htmlFor='priceLow'>$</label>
+          <label htmlFor='priceLow'>Under $10</label>
         </div>
-        <div className='input-option'>
+        <div className={`input-option ${priceRange.includes('2') ? 'checked' : ''}`}>
           <input 
             type='checkbox' 
             id='priceMedium' 
@@ -95,9 +95,9 @@ const PriceRange = ({ quizState, onPrevious, onSubmit, onReset }: PriceRangeProp
             value='2' 
             checked={priceRange.includes('2')}
             onChange={handleCheckboxChange}/>
-          <label htmlFor='priceMedium'>$$</label>
+          <label htmlFor='priceMedium'>$11-$30</label>
         </div>
-        <div className='input-option'>
+        <div className={`input-option ${priceRange.includes('3') ? 'checked' : ''}`}>
           <input 
             type='checkbox' 
             id='priceHigh' 
@@ -105,9 +105,9 @@ const PriceRange = ({ quizState, onPrevious, onSubmit, onReset }: PriceRangeProp
             value='3' 
             checked={priceRange.includes('3')}
             onChange={handleCheckboxChange}/>
-          <label htmlFor='priceHigh'>$$$</label>
+          <label htmlFor='priceHigh'>$31-$60</label>
         </div>
-        <div className='input-option'>
+        <div className={`input-option ${priceRange.includes('4') ? 'checked' : ''}`}>
           <input 
             type='checkbox' 
             id='priceHighest' 
@@ -115,14 +115,14 @@ const PriceRange = ({ quizState, onPrevious, onSubmit, onReset }: PriceRangeProp
             value='4' 
             checked={priceRange.includes('4')}
             onChange={handleCheckboxChange}/>
-          <label htmlFor='priceHighest'>$$$$</label>
+          <label htmlFor='priceHighest'>Over $61</label>
         </div>
       </div>
-      <div className='btn-wrapper'>
-        <button className='btn primary' onClick={handleReset}>Reset</button>
+      <div className='btn-wrapper three-btn'>
+        <button className='btn tertiary' onClick={handleReset}>Reset</button>
         <div className='inner-btn-wrapper'>
-          <button onClick={handlePrevious} className='btn primary'>Previous</button>
-          <button type='submit' className='btn submit' onClick={handleSubmit} disabled={!isPriceRangeSelected}>Submit</button>
+          <button className='btn quaternary' onClick={handlePrevious}>Previous</button>
+          <button className='btn submit' type='submit' onClick={handleSubmit} disabled={!isPriceRangeSelected}>Submit</button>
         </div>
       </div>
     </>
