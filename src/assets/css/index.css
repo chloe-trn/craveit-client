@@ -1,21 +1,18 @@
 :root {
-  --primary: #114097;
-  --secondary: #e3d6e7;
-  --tertiary: #484848;
+  --primary: #ffe8dc;
+  --secondary: #cefff7;
+  --tertiary: #bbddff;
+  --quaternary: #fffcae;
+  --grey-1: #d0d0d0;
+  --grey-2: #818181;
+  --white: #f9f9f9;
+  --black: #091d31;
 
-  --light-bg: #fcfcfc;
-  --bg: #ebebeb;
+  --error-bg: #ffd5d5;
+  --error-text: #b03b3b;
 
-  --error-bg: #faaeae;
-  --error-text: #9a3838;
-  --disclaimer-bg: #a3c1f9;
-  --disclaimer-text: #114097;
-
-  --dark-text: #232324;
-  --light-text: #ffffff;
-
-  --heading-font: Arial, Helvetica, sans-serif;
-  --body-font: Arial, Helvetica, sans-serif;
+  --heading-font: 'Questrial', sans-serif;
+  --body-font: 'Questrial', sans-serif;
 
   --transition: .35s cubic-bezier(.3, .86, .36, .95);
 }
@@ -34,11 +31,5 @@ body {
   font-family: var(--body-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
-}
-
-@media only screen and (min-width: 1024px) {
-  body {
-    font-size: 1rem;
-  }
+  line-height: 1.7;
 }

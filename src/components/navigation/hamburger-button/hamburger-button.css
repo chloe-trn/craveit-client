@@ -12,7 +12,7 @@
 .hamburger .line {
   display: block;
   position: absolute;
-  background: var(--primary);
+  background: var(--white);
   height: 4px;
   width: 100%;
   left: 0;

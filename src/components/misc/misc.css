@@ -8,7 +8,7 @@
 }
 
 .rating-wrapper .star {
-  background-color: var(--grey);
+  background-color: var(--grey-2);
   width: 20px;
   height: 20px;
   display: inline-flex;

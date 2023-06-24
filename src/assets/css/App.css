@@ -1,5 +1,10 @@
 a {
-  color: var(--primary);
+  color: var(--black);
+  text-transform: lowercase;
+}
+
+p {
+  margin: 25px 0;
 }
 
 h1, h2, h3, h4 {
@@ -7,7 +12,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 2rem
+  font-size: 3.125rem;
 }
 
 h2 {
@@ -22,9 +27,20 @@ h4 {
   font-size: 1rem;
 }
 
+.hidden {
+  position: absolute;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  left: -9999px;
+}
+
 .app {
   position: relative;
-  background: var(--light-bg);
+  background: var(--primary);
+  background: linear-gradient(-170deg, var(--primary) 0%, var(--white) 100%);
+  color: var(--black);
+  text-transform: lowercase;
   overflow: hidden;
   min-height: 100vh;
   display: grid;
@@ -32,7 +48,7 @@ h4 {
 }
 
 .app .wrapper {
-  padding: 0 15px;
+  padding: 0 25px;
 }
 
 .app.initial .main,
@@ -45,7 +61,12 @@ h4 {
 
 .app.initial .header
  {
-  margin: 20px 0;
+  margin: 20px 0 0;
+}
+
+.app.initial .header .h1 {
+  color: var(--black);
+  text-transform: lowercase;
 }
 
 .app.initial .hamburger {
@@ -56,13 +77,22 @@ h4 {
   display: grid;
 }
 
-.app.initial .footer 
- {
+.app.initial .footer {
   margin: 40px 0;
 }
 
+.app.auth {
+  background: var(--black);
+}
+
 .app.auth .header {
-  background-color: var(--light-bg); 
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.app.auth .header .h1 {
+  font-size: 2.75rem;
+  margin: 8px 0;
 }
 
 .app.auth .header .wrapper {
@@ -79,44 +109,96 @@ h4 {
 }
 
 .app.auth .inner-wrapper {
-  background-color: var(--bg);
+  background-color: var(--white);
+  border-radius: 60px 0 0 0;
+}
+
+.app.auth .main {
+  padding: 45px 0 0;
+}
+
+.app.auth .footer {
+  text-align: center;
+  margin: 60px 0 30px;
 }
 
 .link {
   transition: all var(--transition);
   background: none;
   border: none;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-family: var(--body-font);
-  color: var(--primary);
+  color: var(--text);
   text-decoration: underline;
+  text-transform: lowercase;
   cursor: pointer; 
 }
 
 .link:hover {
-  color: var(--secondary);
+  color: var(--tertiary);
 }
 
 .btn {
+  position: relative;
   transition: all var(--transition);
-  padding: 12px 40px;
-  font-size: 1rem;
+  padding: 10px 30px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: var(--black);
+  text-transform: lowercase;
   border: none;
-  border-radius: 5px;
+  border-radius: 20.5px;
+  text-decoration: none;
+  text-align: center;
+  min-height: 40px;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
+  box-shadow: -1px 2px 2px 0 rgba(0, 0, 0, .2);
 }
 
 .btn.primary {
-  background-color: var(--primary);
-  color: var(--light-text);
+  background: var(--primary);
 }
 
-.btn.primary:hover {
-  background-color: var(--tertiary);
+.btn.secondary {
+  background: var(--secondary);
+}
+
+.btn.tertiary {
+  background: var(--tertiary);
+}
+
+.btn.quaternary {
+  background: var(--quaternary);
+}
+
+.btn.gradient {
+  background: linear-gradient(218deg, var(--primary) 0%, var(--primary) 15%, var(--secondary) 100%);
+}
+
+.btn:hover {
+  box-shadow: -1px 6px 6px 0 rgba(0, 0, 0, .2);
+}
+
+.btn.submit {
+  color: var(--white);
+  background: var(--black);
+}
+
+.btn[disabled] {
+  background-color: var(--grey-1);
+  color: var(--grey-2);
+  cursor: not-allowed;
+}
+
+.btn-wrapper {
+  width: 100%;
+  display: flex;
 }
 
 .msg {
-  margin: 10px 0;
+  margin: 20px 0;
   padding: 10px;
   border-radius: 5px;
 }
@@ -138,15 +220,19 @@ h4 {
 @media only screen and (min-width: 1024px) {
   .app.auth {
     display: flex;
+    flex-direction: column;
   }
 
-  .app.auth .header {
-    flex: 0 0 200px; 
+  .app.auth .header-content {
+    width: auto;
   }
 
   .app.auth .header .wrapper {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  .app.auth .main .wrapper {
+    padding: 0 45px;
   }
 
   .app.auth .inner-wrapper {
@@ -156,8 +242,7 @@ h4 {
     justify-content: space-between;
   }
 
-  .app.auth .header, .app.auth .inner-wrapper {
-    height: 100vh; 
+  .app.auth .inner-wrapper { 
     overflow: auto;
   }
 

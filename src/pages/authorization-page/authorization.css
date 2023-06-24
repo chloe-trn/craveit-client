@@ -1,8 +1,8 @@
 .auth-container {
-  background-color: var(--light-bg-color);
-  box-shadow: rgb(139 143 147 / 20%) 0px 10px 20px;
-  padding: 30px;
+  background: var(--white);
+  padding: 15px 25px 30px;
   border-radius: 5px;
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.1);
 }
 
 .desc {
@@ -10,24 +10,37 @@
 }
 
 .formfield {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .formfield label {
   display: inline-block;
-  margin-bottom: 5px;
 }
 
 .formfield input {
-  width: calc(100% - 30px);
-  padding: 16px;
-  border-radius: 5px;
-  border: 1px solid #787878;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 15px;;
+  border: 1px solid rgba(0,0,0,0.2);
 }  
+
+.auth-container .btn-wrapper {
+  justify-content: flex-end;
+  margin: 32px 0 0;
+}
 
 @media only screen and (min-width: 768px) {
   .auth-container {
     width: 525px;
+    padding: 22px 25px 40px;
+  }
+
+  .formfield  {
+    margin-bottom: 40px;
+  } 
+  
+  .auth-container .btn-wrapper {
+    margin: 45px 0 0;
   }
 }
   
