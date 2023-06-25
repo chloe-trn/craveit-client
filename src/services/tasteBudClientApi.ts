@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react' 
 import type { RootState } from '../app/redux-store'
+import type { Result } from '../helpers/types'
 
 // Define an API client to communicate with the server
 export const tasteBudClientApi = createApi({
@@ -56,8 +57,36 @@ export const tasteBudClientApi = createApi({
           body, // body with username and password
         }
       },
+    }),
+    saveResult: builder.mutation({
+      query: (body: { 
+        userId: string;
+        quizId: string;
+        date: string;
+        restaurantName: string;
+        location: string;
+        priceRange: string;
+      }) => {
+        return {
+          url: 'api/results', // API endpoint for saving a quiz result
+          method: 'post', // HTTP method for the request
+          body, // body with username and password
+        }
+      },
+    }),
+    getResults: builder.query<Array<Result>, void>({
+      query: () => ({
+        url: 'api/results', // API endpoint for retrieving results
+        method: 'get', // HTTP method for the request
+      }),
     })
-  }),
+  })
 })
 
-export const { useLoginUserMutation, useRegisterUserMutation, useSubmitQuizMutation } = tasteBudClientApi
+export const { 
+  useLoginUserMutation, 
+  useRegisterUserMutation, 
+  useSubmitQuizMutation, 
+  useSaveResultMutation,
+  useGetResultsQuery
+} = tasteBudClientApi
