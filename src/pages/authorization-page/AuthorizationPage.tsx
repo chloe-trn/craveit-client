@@ -5,7 +5,10 @@ import { useDispatch } from 'react-redux'
 import { useLoginUserMutation, useRegisterUserMutation } from '../../services/tasteBudClientApi'
 import { setUser } from '../../services/auth/authSlice'
 import { closeMenu } from '../../services/menu/menuSlice'
+import { setLoadingWithDelay } from '../../helpers/loading-helper'
+
 import { faWarning } from '@fortawesome/free-solid-svg-icons'
+
 import Loading from '../../components/navigation/loading/Loading'
 import Message from '../../components/generic/Message'
 
@@ -19,10 +22,10 @@ const AuthorizationPage = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
+  // get user info from local storage if they are already logged in
+  // redirect them to the home page
   const userDetails = JSON.parse(localStorage.getItem('tastebud_user') || '{}')
-
   useEffect(() => {
-    console.log('user:', userDetails)
     dispatch(setUser(userDetails))
 
     if (userDetails && Object.keys(userDetails).length !== 0) {
@@ -30,24 +33,17 @@ const AuthorizationPage = () => {
     }
   }, [])
 
+  // state variables
   const [errorMessage, setErrorMessage] = useState('')
   const [registerView, setRegisterView] = useState(false)
   const [formValues, setFormValues] = useState(initialState)
   const [isLoading, setIsLoading] = useState(false)
-  const [isAsyncCallCompleted, setIsAsyncCallCompleted] = useState(false)
 
-  const { username, email, password } = formValues
+  // mutation hooks for login and registration
+  const [loginUser, { data: loginData, isSuccess: isLoginSuccess, isError: isLoginError, error: loginError }] = useLoginUserMutation()
+  const [registerUser, { data: registerData, isSuccess: isRegisterSuccess, isError: isRegisterError, error: registerError }] = useRegisterUserMutation()
 
-  const [
-    loginUser,
-    { data: loginData, isSuccess: isLoginSuccess, isError: isLoginError, error: loginError },
-  ] = useLoginUserMutation()
-
-  const [
-    registerUser,
-    { data: registerData, isSuccess: isRegisterSuccess, isError: isRegisterError, error: registerError },
-  ] = useRegisterUserMutation()
-
+  // username and password validation helpers 
   const validateUsername = (username: string) => {
     return /^\S*$/.test(username)
   }
@@ -56,10 +52,13 @@ const AuthorizationPage = () => {
     return /(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}/.test(password)
   }
 
+  // set the current form values if the user types
+  const { username, email, password } = formValues 
   const handleChange = (e: any) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
+  // handles user registration, performs validation first 
   const handleRegister = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
@@ -74,56 +73,24 @@ const AuthorizationPage = () => {
         return
       }
       
-      setIsLoading(true)
-      const startTime = Date.now()
-
-      await registerUser({ username, email, password })
-
-      const endTime = Date.now()
-      const delay = 1500
-
-      const remainingTime = delay - (endTime - startTime)
-
-      if (remainingTime > 0) {
-        await new Promise((resolve) => setTimeout(resolve, remainingTime))
-      }
-
-      setIsLoading(false)
-      setIsAsyncCallCompleted(true)
+      await setLoadingWithDelay(async () => {await registerUser({ username, email, password })}, setIsLoading)
     }
   }
 
+  // handles user login
   const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     if (username && password) {
-      setIsLoading(true)
-      const startTime = Date.now()
-
-      await loginUser({ username, password })
-
-      const endTime = Date.now()
-      const delay = 2500
-
-      const remainingTime = delay - (endTime - startTime)
-
-      if (remainingTime > 0) {
-        await new Promise((resolve) => setTimeout(resolve, remainingTime))
-      }
-
-      setIsLoading(false)
-      setIsAsyncCallCompleted(true)
+      await setLoadingWithDelay(async () => {await loginUser({ username, password })}, setIsLoading)
     } else {
       console.log('there is a login error')
     }
   }
 
+  // handles registration or login success
   useEffect(() => {
-    setErrorMessage('')
-  }, [registerView])
-
-  useEffect(() => {
-    if (isRegisterSuccess && isAsyncCallCompleted) {
+    if (isRegisterSuccess && !isLoading) {
       if (registerData.status !== 'Success') {
         setErrorMessage(registerData.message)
       } else {
@@ -133,7 +100,7 @@ const AuthorizationPage = () => {
       }
     }
 
-    if (isLoginSuccess && isAsyncCallCompleted) {
+    if (isLoginSuccess && !isLoading) {
       if (loginData.status !== 'Success') {
         setErrorMessage(loginData.message)
       } else {
@@ -142,12 +109,18 @@ const AuthorizationPage = () => {
         navigate('/home')
       }
     }
-  }, [isRegisterSuccess, isLoginSuccess, isAsyncCallCompleted])
+  }, [isRegisterSuccess, isLoginSuccess, isLoading])
 
+  // handles registration or login errors
   useEffect(() => {
     isRegisterError && console.log('registration failed:', registerError)
     isLoginError && console.log('login failed:', loginError)
   }, [isRegisterError, isLoginError])
+
+  // reset error message when switching from login/register screen
+  useEffect(() => {
+    setErrorMessage('')
+  }, [registerView])
 
   return (
     <>
@@ -176,44 +149,46 @@ const AuthorizationPage = () => {
           {errorMessage && <Message className={'msg error'} icon={faWarning} text={errorMessage} />}
           <form onSubmit={registerView ? handleRegister : handleLogin}>
             <div className="formfield">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username" className='hidden'>Username</label>
               <input
                 type="text"
                 id="username"
                 name="username"
                 value={username}
                 onChange={handleChange}
-                placeholder="Enter username"
+                placeholder="enter username"
                 required
               />
             </div>
             {registerView && (
               <div className="formfield">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email" className='hidden'>Email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={email}
                   onChange={handleChange}
-                  placeholder="Enter email"
+                  placeholder="enter email"
                   required
                 />
               </div>
             )}
             <div className="formfield">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password" className='hidden'>Password</label>
               <input
                 type="password"
                 id="password"
                 name="password"
                 value={password}
                 onChange={handleChange}
-                placeholder="Enter password"
+                placeholder="enter password"
                 required
               />
             </div>
-            <input type="submit" className="btn primary" value={registerView ? 'Register' : 'Login'} />
+            <div className='btn-wrapper'>
+              <input type="submit" className="btn arrow gradient" value='Submit' />
+            </div>
           </form>
         </div>
       )}
