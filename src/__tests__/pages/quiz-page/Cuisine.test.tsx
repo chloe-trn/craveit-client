@@ -1,23 +1,11 @@
 import { fireEvent } from '@testing-library/react'
 import { render, screen } from '../../../test-utils/render-util'
+import { mockQuizState } from '../../../test-utils/mock-data'
 import Cuisine from '../../../pages/quiz-page/questions/Cuisine'
 
 const mockOnPrevious = jest.fn()
 const mockOnNext = jest.fn()
 const mockOnReset = jest.fn()
-
-const mockQuizState = {
-  location: {
-    street: '',
-    streetContinued: '',
-    city: '',
-    state: '',
-    zipCode: '',
-  },
-  distance: '',
-  cuisine: [],
-  priceRange: [],
-}
 
 describe('Cuisine', () => {
   it('should enable the next button when all at least one cuisine is chosen', () => {

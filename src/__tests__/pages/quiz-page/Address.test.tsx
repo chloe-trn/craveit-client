@@ -1,22 +1,10 @@
 import { fireEvent } from '@testing-library/react'
 import { render, screen } from '../../../test-utils/render-util'
+import { mockQuizState } from '../../../test-utils/mock-data'
 import Address from '../../../pages/quiz-page/questions/Address'
 
 const mockOnNext = jest.fn()
 const mockOnReset = jest.fn()
-
-const mockQuizState = {
-  location: {
-    street: '',
-    streetContinued: '',
-    city: '',
-    state: '',
-    zipCode: '',
-  },
-  distance: '',
-  cuisine: [],
-  priceRange: [],
-}
 
 describe('Address', () => {
   it('should enable the next button when all required fields are filled out', () => {

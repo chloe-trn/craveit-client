@@ -2,25 +2,10 @@ import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from '../../app/redux-store'
+import { mockResultData } from '../../test-utils/mock-data'
 import ResultPage from '../../pages/result-page/ResultPage'
 
-jest.mock('mapbox-gl');
-
-const mockQuizData = {
-  name: 'Restaurant Name',
-  rating: 4.5,
-  categories: [
-    { alias: 'test category 1', title: 'Test Category 1' },
-    { alias: 'test category 2', title: 'Test Category 2' },
-  ],
-  phone: '123-456-7890',
-  url: 'https://test.com',
-  coordinates: {
-    longitude: 0,
-    latitude: 0,
-  },
-  distance: 3873
-}
+jest.mock('mapbox-gl')
 
 describe('ResultPage', () => {
   test('renders quiz data correctly when not null', () => {
@@ -29,7 +14,7 @@ describe('ResultPage', () => {
       <Provider store={store}>
         <MemoryRouter initialEntries={[{ 
           pathname: '/',
-          state: { quizData: mockQuizData }
+          state: { quizData: mockResultData }
         }]}>
           <ResultPage />
         </MemoryRouter>
@@ -37,9 +22,9 @@ describe('ResultPage', () => {
     )
 
     // assert
-    expect(screen.getByText(mockQuizData.name)).toBeInTheDocument()
-    expect(screen.getByText(mockQuizData.rating.toString())).toBeInTheDocument()
-    expect(screen.getByText(mockQuizData.phone)).toBeInTheDocument()
+    expect(screen.getByText(mockResultData.business.name)).toBeInTheDocument()
+    expect(screen.getByText(mockResultData.business.rating.toString())).toBeInTheDocument()
+    expect(screen.getByText(mockResultData.business.phone)).toBeInTheDocument()
 
     expect(screen.getByText('test category 1,')).toBeInTheDocument()
     expect(screen.getByText('test category 2')).toBeInTheDocument()

@@ -1,23 +1,11 @@
 import { fireEvent } from '@testing-library/react'
 import { render, screen } from '../../../test-utils/render-util'
+import { mockQuizState } from '../../../test-utils/mock-data'
 import PriceRange from '../../../pages/quiz-page/questions/PriceRange'
 
 const mockOnPrevious = jest.fn()
 const mockOnSubmit = jest.fn()
 const mockOnReset = jest.fn()
-
-const mockQuizState = {
-  location: {
-    street: '',
-    streetContinued: '',
-    city: '',
-    state: '',
-    zipCode: '',
-  },
-  distance: '',
-  cuisine: [],
-  priceRange: [],
-}
 
 describe('PriceRange', () => {
   it('should enable the submit button when at least one price range is chosen', () => {

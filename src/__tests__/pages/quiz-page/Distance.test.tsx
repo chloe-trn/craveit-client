@@ -1,23 +1,11 @@
 import { fireEvent } from '@testing-library/react'
 import { render, screen } from '../../../test-utils/render-util'
+import { mockQuizState } from '../../../test-utils/mock-data'
 import Distance from '../../../pages/quiz-page/questions/Distance'
 
 const mockOnPrevious = jest.fn()
 const mockOnNext = jest.fn()
 const mockOnReset = jest.fn()
-
-const mockQuizState = {
-  location: {
-    street: '',
-    streetContinued: '',
-    city: '',
-    state: '',
-    zipCode: '',
-  },
-  distance: '',
-  cuisine: [],
-  priceRange: [],
-}
 
 describe('Distance', () => {
   it('should enable the next button when a distance option is chosen', () => {
