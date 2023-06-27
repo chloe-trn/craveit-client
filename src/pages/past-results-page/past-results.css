@@ -1,0 +1,75 @@
+.past-results .filter-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 70px 0 40px;
+}
+
+.past-results .filter {
+  margin-right: 30px;
+}
+
+.past-results .filter select {
+  text-transform: lowercase;
+  margin-left: 8px;
+  padding: 2px;
+  border-radius: 8px;
+}
+
+.past-results .table-wrapper {
+  overflow-x: auto;
+  max-width: calc(100vw - 50px);
+}
+
+.past-results table {
+  table-layout: fixed;
+  width: 1200px;
+  border-radius: 60px;
+}
+
+.past-results th, .past-results td {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--grey-1);
+}
+
+.past-results th {
+  text-align: left;
+}
+
+.past-results th > svg {
+  color: var(--grey-1);
+  margin-right: 10px;
+  font-size: 1.063rem;
+}
+
+.past-results tr.deleted {
+  display: none;
+}
+
+.past-results .rating, 
+.past-results .price,
+.past-results .distance,
+.past-results .delete {
+  text-align: center;
+}
+
+.past-results .delete button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.past-results .delete button:hover > svg {
+  color: var(--grey-2);
+}
+
+@media only screen and (min-width: 1024px) {
+  .past-results .filter-wrapper {
+    flex-direction: row;
+  }
+
+  .past-results table {
+    table-layout: auto;
+    width: 100%;
+  }
+}
