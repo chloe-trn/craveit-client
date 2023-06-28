@@ -5,7 +5,7 @@ import SortSelect from '../../../pages/past-results-page/sorting/SortSelect'
 const onSortChangeMock = jest.fn()
 
 describe('SortSelect', () => {
-  test('renders correct options when rating is chosen', () => {
+  it('renders correct options when rating is chosen', () => {
     // arrange and act
     render(<SortSelect orderBy={'rating'} onSortChange={onSortChangeMock} />)
 
@@ -19,7 +19,7 @@ describe('SortSelect', () => {
     expect(optionElements[1]).toHaveTextContent('Highest Rating')
   })
 
-  test('calls onSortChange with the correct parameter when chosen', () => {
+  it('calls onSortChange with the correct parameter when chosen', () => {
     // arrange 
     render(<SortSelect orderBy="rating" onSortChange={onSortChangeMock} />)
     

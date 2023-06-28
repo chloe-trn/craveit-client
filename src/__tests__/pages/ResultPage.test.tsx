@@ -21,7 +21,7 @@ describe('ResultPage', () => {
   afterAll(() => server.close())
 
   describe('quiz data populating on page', () => {
-    test('renders quiz data correctly when not null', () => {
+    it('renders quiz data correctly when not null', () => {
       // arrange and act
       render(
         <Provider store={store}>
@@ -47,7 +47,7 @@ describe('ResultPage', () => {
       expect(screen.getByText('Get Directions (2.41 miles away)')).toBeInTheDocument()
     })
 
-    test('renders error message when quiz data is null', () => {
+    it('renders error message when quiz data is null', () => {
       // arrange and act
       render(
         <Provider store={store}>
@@ -66,7 +66,7 @@ describe('ResultPage', () => {
   })
 
   describe('save spot', () => {
-    test('save spot successfully', async () => {
+    it('save spot successfully', async () => {
       // arrange 
       render(
         <Provider store={store}>
@@ -88,7 +88,7 @@ describe('ResultPage', () => {
       expect(screen.queryByText(/loading.../i)).not.toBeInTheDocument()
     })
 
-    test('fails to save spot', async () => {
+    it('fails to save spot', async () => {
       // arrange
       server.use(
         rest.post(`${process.env.REACT_DEV_SERVER_URL}/api/results`, (req: RestRequest, res: ResponseComposition<any>, ctx: RestContext) => {

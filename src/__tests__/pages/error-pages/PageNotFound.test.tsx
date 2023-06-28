@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import PageNotFound from '../../../pages/error-pages/PageNotFound'
 
 describe('PageNotFound', () => {
-  test('renders text correctly', () => {
+  it('renders text correctly', () => {
     // arrange and act
     render(<PageNotFound />)
     

@@ -5,7 +5,7 @@ const mockErrorMessage = 'Mock error message'
 const mockReset = jest.fn()
 
 describe('QuizSubmissionError', () => {
-  test('displays correct error message', () => {
+  it('displays correct error message', () => {
     // arrange and act
     render(<QuizSubmissionError onReset={mockReset} text={mockErrorMessage} />)
     
@@ -13,7 +13,7 @@ describe('QuizSubmissionError', () => {
     expect(screen.getByText('REQUEST ERROR: ' + mockErrorMessage)).toBeInTheDocument()
   })
 
-  test('calls onReset when "Start Request Again" is clicked', () => {
+  it('calls onReset when "Start Request Again" is clicked', () => {
     // arrange and act
     render(<QuizSubmissionError onReset={mockReset} text={mockErrorMessage} />)
     fireEvent.click(screen.getByText('Start request again'))

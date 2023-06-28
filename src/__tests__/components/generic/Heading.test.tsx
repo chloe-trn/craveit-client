@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import Heading from '../../../components/generic/Heading'
 
 describe('Heading', () => {
-    test('renders a heading with the correct title', () => {
+    it('renders a heading with the correct title', () => {
         // arrange
         const title = 'Test Heading'
       

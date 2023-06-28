@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import List from '../../../components/generic/List'
 
 describe('List', () => {
-  test('renders a list of with the correct number of items and item content', () => {
+  it('renders a list of with the correct number of items and item content', () => {
     // arrange
     const mockItems = ['Item 1', 'Item 2', 'Item 3']
     const mockRenderFunction= jest.fn(item => <span>{item}</span>)

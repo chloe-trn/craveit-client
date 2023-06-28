@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import StarRating from '../../../components/misc/StarRating'
 
 describe('StarRating', () => {
-  test('renders stars with correct fill width for given rating', () => {
+  it('renders stars with correct fill width for given rating', () => {
     // arrange
     const rating = 3.75
 

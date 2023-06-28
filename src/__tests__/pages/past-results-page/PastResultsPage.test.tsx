@@ -16,7 +16,7 @@ describe('PastResultsPage', () => {
 
   describe('get results successfully', () => {
 
-    test('renders table if results are available', async () => {
+    it('renders table if results are available', async () => {
       // arrange and act
       render(<PastResultsPage />)
   
@@ -28,7 +28,7 @@ describe('PastResultsPage', () => {
     })
     
     describe('delete functionality', () => {
-      test('successfully delete item', async () => {
+      it('successfully delete item', async () => {
         // arrange 
         render(<PastResultsPage />)
         expect(await screen.findByRole('table')).toBeInTheDocument()
@@ -41,7 +41,7 @@ describe('PastResultsPage', () => {
         expect(await screen.findByText('Item deleted.')).toBeInTheDocument()  
       })
     
-      test('unsuccessfully delete item', async () => {
+      it('unsuccessfully delete item', async () => {
         // arrange 
         server.use(
           rest.delete(`${process.env.REACT_DEV_SERVER_URL}/api/results/:id`, (req: RestRequest<{ id: string }>, res: ResponseComposition<any>, ctx: RestContext) => {
@@ -62,7 +62,7 @@ describe('PastResultsPage', () => {
   })
 
   describe('does not get results successfully', () => {
-    test('renders message when results are not available', async () => {
+    it('renders message when results are not available', async () => {
       // arrange
       server.use(
         rest.get(`${process.env.REACT_DEV_SERVER_URL}/api/results`, (req: RestRequest, res: ResponseComposition<any>, ctx: RestContext) => {
