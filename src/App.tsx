@@ -56,7 +56,7 @@ const App = () => {
         <header className={`header ${menuOpen ? 'open' : 'close'}`}>
           <div className='wrapper'>
             <div className='header-content'>
-              <Heading title={'TasteBud'}/>
+              <Heading title={'Crave It.'}/>
               <HamburgerButton onClick={handletoggleMenu} menuOpen={menuOpen} />
             </div>
             {userDetails?.token && <DashboardMenu />}
@@ -70,7 +70,7 @@ const App = () => {
           </main>
           <footer className='footer'>
             <div className='wrapper'>
-              TasteBud 2023.
+              &copy; 2023 Crave It.
             </div>
           </footer>
       </div>
