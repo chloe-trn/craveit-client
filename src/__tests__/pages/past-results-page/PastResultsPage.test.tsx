@@ -1,21 +1,20 @@
 import { rest, RestRequest, ResponseComposition, RestContext } from 'msw'
 import { fireEvent } from '@testing-library/react'
 import { render, screen } from '../../../test-utils/render-util'
-import { store } from '../../../app/redux-store'
 import { server } from '../../../test-utils/mock-server'
+import { store } from '../../../app/redux-store'
 import { tasteBudClientApi } from '../../../services/tasteBudClientApi'
 import PastResultsPage from '../../../pages/past-results-page/PastResultsPage'
 
 describe('PastResultsPage', () => {
   beforeAll(() => server.listen())
+  afterAll(() => server.close())
   afterEach(() => {
     server.resetHandlers()
     store.dispatch(tasteBudClientApi.util.resetApiState())
   })
-  afterAll(() => server.close())
 
   describe('get results successfully', () => {
-
     it('renders table if results are available', async () => {
       // arrange and act
       render(<PastResultsPage />)

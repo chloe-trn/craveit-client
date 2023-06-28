@@ -3,9 +3,9 @@ import { render, screen } from '../../../test-utils/render-util'
 import QuizPage from '../../../pages/quiz-page/QuizPage'
 
 jest.mock('@mapbox/search-js-react', () => ({
-    AddressAutofill: jest.fn(),
-    AddressMinimap: jest.fn(),
-    config: { accessToken: 'mock_access_token'}
+  AddressAutofill: jest.fn(),
+  AddressMinimap: jest.fn(),
+  config: { accessToken: 'mock_access_token'}
 }))
 
 describe('QuizPage', () => {

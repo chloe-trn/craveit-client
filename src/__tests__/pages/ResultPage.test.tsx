@@ -12,13 +12,12 @@ import ResultPage from '../../pages/result-page/ResultPage'
 jest.mock('mapbox-gl')
 
 describe('ResultPage', () => {
-
   beforeAll(() => server.listen())
+  afterAll(() => server.close())
   afterEach(() => {
     server.resetHandlers()
     store.dispatch(tasteBudClientApi.util.resetApiState())
   })
-  afterAll(() => server.close())
 
   describe('quiz data populating on page', () => {
     it('renders quiz data correctly when not null', () => {
@@ -60,7 +59,7 @@ describe('ResultPage', () => {
         </Provider>
       )
   
-      // assert category 1
+      // assert 
       expect(screen.getByText(/Please complete the questionnaire before we can find a matching restaurant for you/i)).toBeInTheDocument()
     })
   })
