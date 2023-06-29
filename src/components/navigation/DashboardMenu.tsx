@@ -1,12 +1,11 @@
-import './dashboard-menu.css'
 import { ReactNode} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { logOut } from '../../../redux/slices/authSlice'
-import { toggleMenu } from '../../../redux/slices/menuSlice'
+import { logOut } from '../../redux/slices/authSlice'
+import { toggleMenu } from '../../redux/slices/menuSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouseChimneyUser, faUtensils, faRectangleList, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
-import List from '../../generic/List'
+import List from '../generic/List'
 
 type NavigationItem = {
   name: string

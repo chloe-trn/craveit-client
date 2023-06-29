@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import HamburgerButton from '../../../components/navigation/hamburger-button/HamburgerButton'
+import HamburgerButton from '../../../components/navigation/HamburgerButton'
 
 describe('HamburgerButton', () => {
   it('should call onClick when clicked', () => {

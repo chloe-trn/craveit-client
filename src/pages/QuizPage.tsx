@@ -1,4 +1,3 @@
-import './quiz.css'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -8,8 +7,8 @@ import { setQuizBody } from '../helpers/quiz-body'
 import { clearQuiz } from '../redux/slices/quizSlice'
 import { setLoadingWithDelay } from '../helpers/loading'
 
-import Loading from '../components/navigation/loading/Loading'
-import ProgressBar from '../components/navigation/progress-bar/ProgressBar'
+import Loading from '../components/navigation/Loading'
+import ProgressBar from '../components/navigation/ProgressBar'
 import QuizSubmissionError from '../components/misc/QuizSubmissionError'
 
 import AddressMap from '../components/questions/AddressMap'

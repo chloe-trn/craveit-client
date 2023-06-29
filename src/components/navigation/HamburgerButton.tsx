@@ -1,5 +1,3 @@
-import './hamburger-button.css'
-
 type HamburgerButtonProps = {
   onClick: (event: React.MouseEvent<HTMLElement>) => void,
   menuOpen: boolean

@@ -1,3 +1,15 @@
+@import './App.scss';
+@import './pages/authorization.scss';
+@import './pages/quiz.scss';
+@import './pages/result.scss';
+@import './pages/past-results.scss';
+@import './components/loading.scss';
+@import './components/dashboard-menu.scss';
+@import './components/hamburger-button.scss';
+@import './components/progress-bar.scss';
+@import './components/maps.scss';
+@import './components/misc.scss';
+
 :root {
   --primary: #ffe8dc;
   --secondary: #cefff7;

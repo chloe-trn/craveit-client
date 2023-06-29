@@ -1,4 +1,3 @@
-import './past-results.css'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Result } from '../helpers/types'
@@ -16,7 +15,7 @@ import {
   faTrash
 } from '@fortawesome/free-solid-svg-icons'
 
-import Loading from '../components/navigation/loading/Loading'
+import Loading from '../components/navigation/Loading'
 import Message from '../components/generic/Message'
 import SortSelect from '../components/misc/SortSelect'
 

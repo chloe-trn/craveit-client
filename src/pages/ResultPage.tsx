@@ -1,4 +1,3 @@
-import './result.css'
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
@@ -10,7 +9,7 @@ import { setLoadingWithDelay } from '../helpers/loading'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faTags, faGlobe, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
-import Loading from '../components/navigation/loading/Loading'
+import Loading from '../components/navigation/Loading'
 import Message from '../components/generic/Message'
 import QuizSubmissionError from '../components/misc/QuizSubmissionError'
 import StarRating from '../components/misc/StarRating'

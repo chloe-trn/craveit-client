@@ -1,5 +1,3 @@
-import './misc.css'
-
 type StarRatingProps = {
   rating: number
 }

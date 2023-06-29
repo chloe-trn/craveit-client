@@ -1,4 +1,3 @@
-import './authorization.css'
 import { FormEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
@@ -9,7 +8,7 @@ import { setLoadingWithDelay } from '../helpers/loading'
 
 import { faWarning } from '@fortawesome/free-solid-svg-icons'
 
-import Loading from '../components/navigation/loading/Loading'
+import Loading from '../components/navigation/Loading'
 import Message from '../components/generic/Message'
 
 const initialState = {

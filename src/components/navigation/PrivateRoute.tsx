@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import { selectAuth } from '../../redux/slices/authSlice'
-import LoadingToRedirect from './loading/LoadingToRedirect'
+import LoadingToRedirect from './LoadingToRedirect'
 
 const PrivateRoute = ({ children }: { children: any }) => {
   const { token } = useSelector(selectAuth)

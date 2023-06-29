@@ -1,5 +1,3 @@
-import './loading.css'
-
 type LoadingProps = {
   text: string
 }

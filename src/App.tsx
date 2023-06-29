@@ -1,12 +1,11 @@
-import './assets/css/App.css'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectAuth, setUser, logOut } from './redux/slices/authSlice'
 import { selectMenu, toggleMenu, closeMenu } from './redux/slices/menuSlice'
 import AppRoutes from './components/navigation/AppRoutes'
 import Heading from './components/generic/Heading'
-import HamburgerButton from './components/navigation/hamburger-button/HamburgerButton'
-import DashboardMenu from './components/navigation/dashboard-menu/DashboardMenu'
+import HamburgerButton from './components/navigation/HamburgerButton'
+import DashboardMenu from './components/navigation/DashboardMenu'
 
 const App = () => {
   const dispatch = useDispatch()

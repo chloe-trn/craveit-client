@@ -1,4 +1,3 @@
-import './maps.css'
 import { useEffect, useRef, useState } from 'react'
 import mapboxgl from 'mapbox-gl'
 mapboxgl.accessToken = (process.env.REACT_APP_MAPBOX as string)

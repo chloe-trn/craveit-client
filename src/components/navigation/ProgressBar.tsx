@@ -1,5 +1,3 @@
-import './progress-bar.css'
-
 type ProgressBarProps = {
   currentQuestion: number
   totalQuestions: number

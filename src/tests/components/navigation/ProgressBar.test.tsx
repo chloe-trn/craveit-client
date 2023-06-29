@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import ProgressBar from '../../../components/navigation/progress-bar/ProgressBar'
+import ProgressBar from '../../../components/navigation/ProgressBar'
 
 const mockCurrentQuestion = 2
 const mockTotalQuestions = 5

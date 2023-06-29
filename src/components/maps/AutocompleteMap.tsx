@@ -1,5 +1,4 @@
 // @ts-nocheck
-import './maps.css'
 import { useState, useCallback, useEffect } from 'react'
 import { AddressAutofill, AddressMinimap, config } from '@mapbox/search-js-react'
 import { Location } from '../../../redux/quiz/quizSlice'
