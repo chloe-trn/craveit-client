@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import mapboxgl from 'mapbox-gl'
 mapboxgl.accessToken = (process.env.REACT_APP_MAPBOX as string)
 
-interface InteractiveMapProps {
+type InteractiveMapProps = {
   longitude: number
   latitude: number
 }
@@ -25,7 +25,7 @@ const InteractiveMap = ({ longitude, latitude }: InteractiveMapProps) => {
     if (!map.current) {
       map.current = new mapboxgl.Map({
         container: mapContainer.current!,
-        style: 'mapbox://styles/mapbox/streets-v12',
+        style: 'mapbox://styles/mapbox/satellite-v9',
         center: [lng, lat],
         zoom: zoom
       })
