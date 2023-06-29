@@ -212,6 +212,11 @@ h4 {
   color: var(--error-text);
 }
 
+.msg.success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
 .msg.disclaimer {
   background-color: var(--disclaimer-bg);
   color: var(--disclaimer-text);

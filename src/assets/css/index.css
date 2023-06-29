@@ -9,7 +9,11 @@
   --black: #091d31;
 
   --error-bg: #ffd5d5;
-  --error-text: #b03b3b;
+  --error-text: #AC3939;
+  --success-bg: #caf6db;
+  --success-text: #1A753D;
+  --disclaimer-bg: var(--tertiary);
+  --disclaimer-text: #31679d;
 
   --heading-font: 'Questrial', sans-serif;
   --body-font: 'Questrial', sans-serif;
