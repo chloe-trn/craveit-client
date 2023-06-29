@@ -7,7 +7,7 @@ jest.mock('react-router-dom', () => ({
 }))
 
 // mock navigate function
-const mockNavigate = jest.fn();
+const mockNavigate = jest.fn()
 
 // mock react-router-dom module 
 // overrides the useNavigate hook with the mockNavigate function

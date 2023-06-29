@@ -1,5 +1,5 @@
 type HeadingProps = {
-    title: string
+  title: string
 }
 
 const Heading = ({ title }: HeadingProps) => {

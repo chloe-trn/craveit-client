@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Result } from '../helpers/types'
 import { mapPriceRange } from '../helpers/price-range-mapper'
 import { useGetResultsQuery, useDeleteResultMutation } from '../redux/clientApi'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faExclamationCircle,
@@ -14,7 +13,6 @@ import {
   faLocationDot,
   faTrash
 } from '@fortawesome/free-solid-svg-icons'
-
 import Loading from '../components/navigation/Loading'
 import Message from '../components/generic/Message'
 import SortSelect from '../components/misc/SortSelect'
@@ -203,7 +201,7 @@ const PastResultsPage = () => {
       ) : getResults.isError ? (
         <>
           <Message className={'msg disclaimer'} icon={faExclamationCircle} text={'No results found.'} />
-          <Link to="/questionnaire" className="btn gradient">Take the Questionnaire</Link>
+          <Link to='/questionnaire' className='btn gradient'>Take the Questionnaire</Link>
         </>
       ) : (
         <Loading text='Loading...' />

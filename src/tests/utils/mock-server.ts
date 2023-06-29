@@ -1,5 +1,5 @@
-import { rest, RestRequest, ResponseComposition, RestContext } from 'msw';
-import { setupServer } from 'msw/node';
+import { rest, RestRequest, ResponseComposition, RestContext } from 'msw'
+import { setupServer } from 'msw/node'
 import { 
   mockLoginUserResponse, 
   mockRegisterUserResponse, 
@@ -28,10 +28,10 @@ export const handlers = [
     return res(ctx.status(200))
   }),
   rest.get(`${baseUrl}/api/results`, (req: RestRequest, res: ResponseComposition<any>, ctx: RestContext) => {
-    return res(ctx.json(mockGetResultsResponse));
+    return res(ctx.json(mockGetResultsResponse))
   }),
   rest.delete(`${baseUrl}/api/results/:id`, (req: RestRequest<{ id: string }>, res: ResponseComposition<any>, ctx: RestContext) => {
-    return res(ctx.status(204));
+    return res(ctx.status(204))
   }),
 ]
 

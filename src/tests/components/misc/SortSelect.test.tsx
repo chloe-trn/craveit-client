@@ -21,7 +21,7 @@ describe('SortSelect', () => {
 
   it('calls onSortChange with the correct parameter when chosen', () => {
     // arrange 
-    render(<SortSelect orderBy="rating" onSortChange={onSortChangeMock} />)
+    render(<SortSelect orderBy='rating' onSortChange={onSortChangeMock} />)
     
     // act
     fireEvent.change(screen.getByRole('combobox'), { target: { value: 'asc' } })

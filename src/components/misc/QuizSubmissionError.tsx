@@ -1,5 +1,5 @@
 import { faWarning } from '@fortawesome/free-solid-svg-icons'
-import Message from "../generic/Message"
+import Message from '../generic/Message'
 
 type QuizSubmissionErrorProps = {
   onReset: () => void
@@ -7,7 +7,6 @@ type QuizSubmissionErrorProps = {
 }
 
 const QuizSubmissionError = ({ onReset, text }: QuizSubmissionErrorProps) => {
-
   const handleReset = () => onReset()
 
   return (

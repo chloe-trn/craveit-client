@@ -11,10 +11,10 @@ const DashboardPage = () => {
       <p>Welcome to Crave It, the app that helps you overcome indecision and find the perfect restaurant!</p>
       <p>Say goodbye to endless options and dilemmas. Crave It narrows down your choices and presents you with one perfect restaurant recommendation.</p>
       <p>Ready to discover your next favorite dining spot?</p>
-      <Link to="/questionnaire">
-        <button className="btn gradient">Take the Questionnaire</button>
+      <Link to='/questionnaire'>
+        <button className='btn gradient'>Take the Questionnaire</button>
       </Link>
-  </section>
+    </section>
   )
 }
 

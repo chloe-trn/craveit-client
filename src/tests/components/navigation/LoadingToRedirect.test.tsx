@@ -2,7 +2,7 @@ import { render, act } from '@testing-library/react'
 import LoadingToRedirect from '../../../components/navigation/LoadingToRedirect'
 
 // Mock navigate function
-const mockNavigate = jest.fn();
+const mockNavigate = jest.fn()
 
 // Mock react-router-dom module 
 // It overrides the useNavigate hook with the mockNavigate function
@@ -24,6 +24,6 @@ describe('LoadingToRedirect', () => {
     })
 
     // assert
-    expect(mockNavigate).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledTimes(1)
   })
 })

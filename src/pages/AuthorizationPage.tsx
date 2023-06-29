@@ -5,9 +5,7 @@ import { useLoginUserMutation, useRegisterUserMutation } from '../redux/clientAp
 import { setUser } from '../redux/slices/authSlice'
 import { closeMenu } from '../redux/slices/menuSlice'
 import { setLoadingWithDelay } from '../helpers/loading'
-
 import { faWarning } from '@fortawesome/free-solid-svg-icons'
-
 import Loading from '../components/navigation/Loading'
 import Message from '../components/generic/Message'
 
@@ -124,22 +122,22 @@ const AuthorizationPage = () => {
   return (
     <>
       {isLoading ? (
-        <Loading text="Loading..." />
+        <Loading text='Loading...' />
       ) : (
-        <div className="auth-container">
-          <h2 data-testid="auth-heading">{registerView ? 'Register' : 'Login'}</h2>
-          <p className="desc">
+        <div className='auth-container'>
+          <h2 data-testid='auth-heading'>{registerView ? 'Register' : 'Login'}</h2>
+          <p className='desc'>
             {registerView ? (
               <>
                 Already have an account?
-                <button className="link" onClick={() => setRegisterView(false)}>
+                <button className='link' onClick={() => setRegisterView(false)}>
                   Login
                 </button>
               </>
             ) : (
               <>
                 Don't have an account?
-                <button data-testid='register-btn' className="link" onClick={() => setRegisterView(true)}>
+                <button data-testid='register-btn' className='link' onClick={() => setRegisterView(true)}>
                   Register
                 </button>
               </>
@@ -147,46 +145,46 @@ const AuthorizationPage = () => {
           </p>
           {errorMessage && <Message className={'msg error'} icon={faWarning} text={errorMessage} />}
           <form onSubmit={registerView ? handleRegister : handleLogin}>
-            <div className="formfield">
-              <label htmlFor="username" className='hidden'>Username</label>
+            <div className='formfield'>
+              <label htmlFor='username' className='hidden'>Username</label>
               <input
-                type="text"
-                id="username"
-                name="username"
+                type='text'
+                id='username'
+                name='username'
                 value={username}
                 onChange={handleChange}
-                placeholder="enter username"
+                placeholder='enter username'
                 required
               />
             </div>
             {registerView && (
-              <div className="formfield">
-                <label htmlFor="email" className='hidden'>Email</label>
+              <div className='formfield'>
+                <label htmlFor='email' className='hidden'>Email</label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
+                  type='email'
+                  id='email'
+                  name='email'
                   value={email}
                   onChange={handleChange}
-                  placeholder="enter email"
+                  placeholder='enter email'
                   required
                 />
               </div>
             )}
-            <div className="formfield">
-              <label htmlFor="password" className='hidden'>Password</label>
+            <div className='formfield'>
+              <label htmlFor='password' className='hidden'>Password</label>
               <input
-                type="password"
-                id="password"
-                name="password"
+                type='password'
+                id='password'
+                name='password'
                 value={password}
                 onChange={handleChange}
-                placeholder="enter password"
+                placeholder='enter password'
                 required
               />
             </div>
             <div className='btn-wrapper'>
-              <input type="submit" className="btn arrow gradient" value='Submit' />
+              <input type='submit' className='btn arrow gradient' value='Submit' />
             </div>
           </form>
         </div>

@@ -5,10 +5,8 @@ import { useSaveResultMutation, useSubmitQuizMutation } from '../redux/clientApi
 import { clearQuiz } from '../redux/slices/quizSlice'
 import { getQuizBody } from '../helpers/quiz-body'
 import { setLoadingWithDelay } from '../helpers/loading'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faTags, faGlobe, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
-
 import Loading from '../components/navigation/Loading'
 import Message from '../components/generic/Message'
 import QuizSubmissionError from '../components/misc/QuizSubmissionError'
@@ -37,7 +35,7 @@ const ResultPage = () => {
   const distanceInMiles = quizDataReturned ? (quizDataReturned.distance / 1609.34).toFixed(2) : null
 
   // mutation hooks for saving result and submitting another quiz
-  const [saveResult, { isSuccess: isSaveResultSuccess, isError: isSaveResultError, error: saveResultError }] = useSaveResultMutation();
+  const [saveResult, { isSuccess: isSaveResultSuccess, isError: isSaveResultError, error: saveResultError }] = useSaveResultMutation()
 
   const [submitQuiz, { data: quizData, isSuccess: isSubmitQuizSuccess, isError: isSubmitQuizError, error: submitQuizError }] = useSubmitQuizMutation()
   
@@ -78,7 +76,6 @@ const ResultPage = () => {
 
       setIsLoading(false)
       setIsSaveClicked(true)
-
     }
   }
 

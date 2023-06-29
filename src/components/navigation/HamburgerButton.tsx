@@ -4,7 +4,6 @@ type HamburgerButtonProps = {
 }
 
 const HamburgerButton = ({ onClick, menuOpen }: HamburgerButtonProps ) => {
-  
   return (
     <button 
       className='hamburger' 

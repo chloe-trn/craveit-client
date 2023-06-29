@@ -11,7 +11,7 @@ jest.mock('react-redux', () => ({
 describe('PrivateRoute', () => {
   it('renders children when the user is logged in', () => {
     // arrange 
-    (useSelector as jest.Mock).mockReturnValue({ token: 'mock_token' });
+    (useSelector as jest.Mock).mockReturnValue({ token: 'mock_token' })
 
     // act
     render(
@@ -30,7 +30,7 @@ describe('PrivateRoute', () => {
 
   it('renders LoadingToRedirect when the user is not logged in', () => {
     // arrange
-    (useSelector as jest.Mock).mockReturnValue({ token: '' });
+    (useSelector as jest.Mock).mockReturnValue({ token: '' })
 
     // act
     render(

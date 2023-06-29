@@ -17,21 +17,21 @@ const AppRoutes = () => {
     <div data-testid='app-routes'>
       <Routes>
         {/* Fallback route for handling 404 errors */}
-        <Route path="*" element={<PageNotFound />} />
+        <Route path='*' element={<PageNotFound />} />
         {/* Redirect to /home if the user is logged in */}
         <Route
-          path="/"
+          path='/'
           element={
             token ? (
-              <Navigate to="/home" replace />
+              <Navigate to='/home' replace />
             ) : (
-              <Navigate to="/auth" replace />
+              <Navigate to='/auth' replace />
             )
           }
         />
-        <Route path="/auth" element={<AuthorizationPage />} />
+        <Route path='/auth' element={<AuthorizationPage />} />
         <Route
-          path="/home"
+          path='/home'
           element={
             <PrivateRoute>
               <DashboardPage />
@@ -39,7 +39,7 @@ const AppRoutes = () => {
           }
         />
         <Route
-          path="/questionnaire"
+          path='/questionnaire'
           element={
             <PrivateRoute>
               <QuizPage />
@@ -47,7 +47,7 @@ const AppRoutes = () => {
           }
         />
         <Route
-          path="/result"
+          path='/result'
           element={
             <PrivateRoute>
               <ResultPage />
@@ -55,7 +55,7 @@ const AppRoutes = () => {
           }
         />
         <Route
-          path="/saved-results"
+          path='/saved-results'
           element={
             <PrivateRoute>
               <PastResultsPage />

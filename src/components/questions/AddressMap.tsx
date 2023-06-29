@@ -23,8 +23,6 @@ const AddressMap = ({ quizState, onNext, onReset }: AddressMapProps) => {
     let isValid = true
 
     requiredInputs.forEach((input) => {
-      console.log('input:')
-      console.log(input.value)
       if (input.value.trim() === '') {
         isValid = false
       }
