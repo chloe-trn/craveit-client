@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { useSaveResultMutation, useSubmitQuizMutation } from '../../services/clientApi'
 import { clearQuiz } from '../../services/quiz/quizSlice'
 import { getQuizBody } from '../../services/quiz/quizBody'
-import { setLoadingWithDelay } from '../../helpers/loading-helper'
+import { setLoadingWithDelay } from '../../helpers/loading'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faTags, faGlobe, faCheckCircle } from '@fortawesome/free-solid-svg-icons'

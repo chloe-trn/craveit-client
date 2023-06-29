@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { useLoginUserMutation, useRegisterUserMutation } from '../../services/clientApi'
 import { setUser } from '../../services/auth/authSlice'
 import { closeMenu } from '../../services/menu/menuSlice'
-import { setLoadingWithDelay } from '../../helpers/loading-helper'
+import { setLoadingWithDelay } from '../../helpers/loading'
 
 import { faWarning } from '@fortawesome/free-solid-svg-icons'
 

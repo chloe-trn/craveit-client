@@ -6,7 +6,7 @@ import { RootState } from '../../app/redux-store'
 import { useSubmitQuizMutation } from '../../services/clientApi'
 import { setQuizBody } from '../../services/quiz/quizBody'
 import { clearQuiz } from '../../services/quiz/quizSlice'
-import { setLoadingWithDelay } from '../../helpers/loading-helper'
+import { setLoadingWithDelay } from '../../helpers/loading'
 
 import Loading from '../../components/navigation/loading/Loading'
 import ProgressBar from '../../components/navigation/progress-bar/ProgressBar'
