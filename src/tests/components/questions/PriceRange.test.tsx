@@ -1,7 +1,7 @@
 import { fireEvent } from '@testing-library/react'
 import { render, screen } from '../../utils/custom-render'
 import { mockQuizState } from '../../utils/mock-data'
-import PriceRange from '../../../pages/quiz-page/questions/PriceRange'
+import PriceRange from '../../../components/questions/PriceRange'
 
 const mockOnPrevious = jest.fn()
 const mockOnSubmit = jest.fn()

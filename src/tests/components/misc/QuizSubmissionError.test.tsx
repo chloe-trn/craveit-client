@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import QuizSubmissionError from '../../../pages/error-pages/QuizSubmissionError'
+import QuizSubmissionError from '../../../components/misc/QuizSubmissionError'
 
 const mockErrorMessage = 'Mock error message'
 const mockReset = jest.fn()

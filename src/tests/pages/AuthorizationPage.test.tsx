@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/react'
 import { render, screen } from '../utils/custom-render'
-import AuthorizationPage from '../../pages/authorization-page/AuthorizationPage'
+import AuthorizationPage from '../../pages/AuthorizationPage'
 
 jest.mock('react-router-dom', () => ({
   useNavigate: jest.fn()

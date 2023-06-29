@@ -1,7 +1,7 @@
 import { fireEvent } from '@testing-library/react'
 import { render, screen } from '../../utils/custom-render'
 import { mockQuizState } from '../../utils/mock-data'
-import Address from '../../../pages/quiz-page/questions/Address'
+import Address from '../../../components/questions/Address'
 
 const mockOnNext = jest.fn()
 const mockOnReset = jest.fn()

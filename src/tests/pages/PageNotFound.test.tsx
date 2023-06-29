@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import PageNotFound from '../../pages/error-pages/PageNotFound'
+import PageNotFound from '../../pages/PageNotFound'
 
 describe('PageNotFound', () => {
   it('renders text correctly', () => {

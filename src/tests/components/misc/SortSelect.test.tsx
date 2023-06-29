@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/react'
 import { render, screen } from '../../utils/custom-render'
-import SortSelect from '../../../pages/past-results-page/sorting/SortSelect'
+import SortSelect from '../../../components/misc/SortSelect'
 
 const onSortChangeMock = jest.fn()
 

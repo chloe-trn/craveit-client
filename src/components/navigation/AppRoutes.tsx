@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux'
 import { selectAuth } from '../../redux/slices/authSlice'
 
 import PrivateRoute from './PrivateRoute'
-import PageNotFound from '../../pages/error-pages/PageNotFound'
-import AuthorizationPage from '../../pages/authorization-page/AuthorizationPage'
-import DashboardPage from '../../pages/dashboard-page/DashboardPage'
-import PastResultsPage from '../../pages/past-results-page/PastResultsPage'
-import QuizPage from '../../pages/quiz-page/QuizPage'
-import ResultPage from '../../pages/result-page/ResultPage'
+import PageNotFound from '../../pages/PageNotFound'
+import AuthorizationPage from '../../pages/AuthorizationPage'
+import DashboardPage from '../../pages/DashboardPage'
+import PastResultsPage from '../../pages/PastResultsPage'
+import QuizPage from '../../pages/QuizPage'
+import ResultPage from '../../pages/ResultPage'
 
 const AppRoutes = () => {
   const { token } = useSelector(selectAuth)

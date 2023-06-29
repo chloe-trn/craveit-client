@@ -7,7 +7,7 @@ import { store } from '../../redux/store'
 import { server } from '../../tests/utils/mock-server'
 import { mockResultData } from '../../tests/utils/mock-data'
 import { clientApi } from '../../redux/clientApi'
-import ResultPage from '../../pages/result-page/ResultPage'
+import ResultPage from '../../pages/ResultPage'
 
 jest.mock('mapbox-gl')
 

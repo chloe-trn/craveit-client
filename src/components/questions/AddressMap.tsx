@@ -1,8 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { RootState } from '../../../redux/store'
-import { setQuiz } from '../../../redux/slices/quizSlice'
-import AutocompleteMap from '../../../components/maps/AutocompleteMap'
+import { RootState } from '../../redux/store'
+import { setQuiz } from '../../redux/slices/quizSlice'
+import AutocompleteMap  from '../maps/AutocompleteMap'
 
 type AddressMapProps = {
   quizState: RootState['quiz']

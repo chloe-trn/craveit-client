@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { RootState } from '../../../redux/store'
-import { setQuiz } from '../../../redux/slices/quizSlice'
+import { RootState } from '../../redux/store'
+import { setQuiz } from '../../redux/slices/quizSlice'
 
 type AddressProps = {
   quizState: RootState['quiz']

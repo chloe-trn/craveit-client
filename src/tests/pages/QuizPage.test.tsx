@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/react'
 import { render, screen } from '../utils/custom-render'
-import QuizPage from '../../pages/quiz-page/QuizPage'
+import QuizPage from '../../pages/QuizPage'
 
 jest.mock('@mapbox/search-js-react', () => ({
   AddressAutofill: jest.fn(),

@@ -4,7 +4,7 @@ import { render, screen } from '../utils/custom-render'
 import { store } from '../../redux/store'
 import { server } from '../utils/mock-server'
 import { clientApi } from '../../redux/clientApi'
-import PastResultsPage from '../../pages/past-results-page/PastResultsPage'
+import PastResultsPage from '../../pages/PastResultsPage'
 
 describe('PastResultsPage', () => {
   beforeAll(() => server.listen())

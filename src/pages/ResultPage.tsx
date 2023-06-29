@@ -2,19 +2,19 @@ import './result.css'
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { useSaveResultMutation, useSubmitQuizMutation } from '../../redux/clientApi'
-import { clearQuiz } from '../../redux/slices/quizSlice'
-import { getQuizBody } from '../../helpers/quiz-body'
-import { setLoadingWithDelay } from '../../helpers/loading'
+import { useSaveResultMutation, useSubmitQuizMutation } from '../redux/clientApi'
+import { clearQuiz } from '../redux/slices/quizSlice'
+import { getQuizBody } from '../helpers/quiz-body'
+import { setLoadingWithDelay } from '../helpers/loading'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faTags, faGlobe, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
-import Loading from '../../components/navigation/loading/Loading'
-import Message from '../../components/generic/Message'
-import QuizSubmissionError from '../error-pages/QuizSubmissionError'
-import StarRating from '../../components/misc/StarRating'
-import InteractiveMap from '../../components/maps/InteractiveMap'
+import Loading from '../components/navigation/loading/Loading'
+import Message from '../components/generic/Message'
+import QuizSubmissionError from '../components/misc/QuizSubmissionError'
+import StarRating from '../components/misc/StarRating'
+import InteractiveMap from '../components/maps/InteractiveMap'
 
 const ResultPage = () => {
   const location = useLocation()

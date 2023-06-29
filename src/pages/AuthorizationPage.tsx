@@ -2,15 +2,15 @@ import './authorization.css'
 import { FormEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { useLoginUserMutation, useRegisterUserMutation } from '../../redux/clientApi'
-import { setUser } from '../../redux/slices/authSlice'
-import { closeMenu } from '../../redux/slices/menuSlice'
-import { setLoadingWithDelay } from '../../helpers/loading'
+import { useLoginUserMutation, useRegisterUserMutation } from '../redux/clientApi'
+import { setUser } from '../redux/slices/authSlice'
+import { closeMenu } from '../redux/slices/menuSlice'
+import { setLoadingWithDelay } from '../helpers/loading'
 
 import { faWarning } from '@fortawesome/free-solid-svg-icons'
 
-import Loading from '../../components/navigation/loading/Loading'
-import Message from '../../components/generic/Message'
+import Loading from '../components/navigation/loading/Loading'
+import Message from '../components/generic/Message'
 
 const initialState = {
   username: '',
