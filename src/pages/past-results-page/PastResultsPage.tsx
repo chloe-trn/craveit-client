@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Result } from '../../helpers/types'
 import { mapPriceRange } from '../../helpers/price-range-mapper'
-import { useGetResultsQuery, useDeleteResultMutation } from '../../services/tasteBudClientApi'
+import { useGetResultsQuery, useDeleteResultMutation } from '../../services/clientApi'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {

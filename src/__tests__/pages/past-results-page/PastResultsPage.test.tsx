@@ -3,7 +3,7 @@ import { fireEvent } from '@testing-library/react'
 import { render, screen } from '../../../test-utils/render-util'
 import { server } from '../../../test-utils/mock-server'
 import { store } from '../../../app/redux-store'
-import { tasteBudClientApi } from '../../../services/tasteBudClientApi'
+import { clientApi } from '../../../services/clientApi'
 import PastResultsPage from '../../../pages/past-results-page/PastResultsPage'
 
 describe('PastResultsPage', () => {
@@ -11,7 +11,7 @@ describe('PastResultsPage', () => {
   afterAll(() => server.close())
   afterEach(() => {
     server.resetHandlers()
-    store.dispatch(tasteBudClientApi.util.resetApiState())
+    store.dispatch(clientApi.util.resetApiState())
   })
 
   describe('get results successfully', () => {

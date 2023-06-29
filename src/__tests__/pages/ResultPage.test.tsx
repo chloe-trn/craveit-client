@@ -6,7 +6,7 @@ import { render, screen } from '@testing-library/react'
 import { store } from '../../app/redux-store'
 import { server } from '../../test-utils/mock-server'
 import { mockResultData } from '../../test-utils/mock-data'
-import { tasteBudClientApi } from '../../services/tasteBudClientApi'
+import { clientApi } from '../../services/clientApi'
 import ResultPage from '../../pages/result-page/ResultPage'
 
 jest.mock('mapbox-gl')
@@ -16,7 +16,7 @@ describe('ResultPage', () => {
   afterAll(() => server.close())
   afterEach(() => {
     server.resetHandlers()
-    store.dispatch(tasteBudClientApi.util.resetApiState())
+    store.dispatch(clientApi.util.resetApiState())
   })
 
   describe('quiz data populating on page', () => {

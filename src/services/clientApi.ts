@@ -3,8 +3,8 @@ import type { RootState } from '../app/redux-store'
 import type { User, Quiz, Result } from '../helpers/types'
 
 // Define an API client to communicate with the server
-export const tasteBudClientApi = createApi({
-  reducerPath: 'tasteBudClientApi', 
+export const clientApi = createApi({
+  reducerPath: 'clientApi', 
   baseQuery: fetchBaseQuery({
     baseUrl: process.env.REACT_DEV_SERVER_URL, 
     prepareHeaders: (headers, { getState }) => {
@@ -75,4 +75,4 @@ export const {
   useSaveResultMutation,
   useGetResultsQuery,
   useDeleteResultMutation
-} = tasteBudClientApi
+} = clientApi

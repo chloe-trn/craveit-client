@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query/react'
-import { tasteBudClientApi } from '../services/tasteBudClientApi'
+import { clientApi } from '../services/clientApi'
 import authReducer from '../services/auth/authSlice'
 import menuReducer from '../services/menu/menuSlice'
 import quizReducer from '../services/quiz/quizSlice'
@@ -8,13 +8,13 @@ import quizReducer from '../services/quiz/quizSlice'
 // Configure Redux store
 export const store = configureStore({
   reducer: {
-    [tasteBudClientApi.reducerPath]: tasteBudClientApi.reducer,
+    [clientApi.reducerPath]: clientApi.reducer,
     auth: authReducer,
     menu: menuReducer,
     quiz: quizReducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(tasteBudClientApi.middleware),
+    getDefaultMiddleware().concat(clientApi.middleware),
 })
 
 export type RootState = ReturnType<typeof store.getState>
