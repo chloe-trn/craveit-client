@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { selectAuth } from '../../services/auth/authSlice'
+import { selectAuth } from '../../redux/slices/authSlice'
 
 const DashboardPage = () => {
   const { username } = useSelector(selectAuth)

@@ -2,8 +2,8 @@ import { rest, RestRequest, ResponseComposition, RestContext } from 'msw'
 import { fireEvent } from '@testing-library/react'
 import { render, screen } from '../../../test-utils/render-util'
 import { server } from '../../../test-utils/mock-server'
-import { store } from '../../../app/redux-store'
-import { clientApi } from '../../../services/clientApi'
+import { store } from '../../../redux/store'
+import { clientApi } from '../../../redux/clientApi'
 import PastResultsPage from '../../../pages/past-results-page/PastResultsPage'
 
 describe('PastResultsPage', () => {

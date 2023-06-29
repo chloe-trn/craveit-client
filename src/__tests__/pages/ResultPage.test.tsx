@@ -3,10 +3,10 @@ import { MemoryRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { fireEvent } from '@testing-library/react'
 import { render, screen } from '@testing-library/react'
-import { store } from '../../app/redux-store'
+import { store } from '../../redux/store'
 import { server } from '../../test-utils/mock-server'
 import { mockResultData } from '../../test-utils/mock-data'
-import { clientApi } from '../../services/clientApi'
+import { clientApi } from '../../redux/clientApi'
 import ResultPage from '../../pages/result-page/ResultPage'
 
 jest.mock('mapbox-gl')

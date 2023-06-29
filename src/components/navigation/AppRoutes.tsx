@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { selectAuth } from '../../services/auth/authSlice'
+import { selectAuth } from '../../redux/slices/authSlice'
 
 import PrivateRoute from './PrivateRoute'
 import PageNotFound from '../../pages/error-pages/PageNotFound'

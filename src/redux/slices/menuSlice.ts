@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { RootState } from '../../app/redux-store'
+import { RootState } from '../store'
 
 interface MenuState {
   menuOpen: boolean

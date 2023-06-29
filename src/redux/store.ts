@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query/react'
-import { clientApi } from '../services/clientApi'
-import authReducer from '../services/auth/authSlice'
-import menuReducer from '../services/menu/menuSlice'
-import quizReducer from '../services/quiz/quizSlice'
+import { clientApi } from './clientApi'
+import authReducer from './slices/authSlice'
+import menuReducer from './slices/menuSlice'
+import quizReducer from './slices/quizSlice'
 
 // Configure Redux store
 export const store = configureStore({

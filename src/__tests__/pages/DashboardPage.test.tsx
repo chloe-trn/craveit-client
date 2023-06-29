@@ -1,6 +1,6 @@
 import { render, screen } from '../../test-utils/render-util'
-import { store } from '../../app/redux-store'
-import { setUser } from '../../services/auth/authSlice'
+import { store } from '../../redux/store'
+import { setUser } from '../../redux/slices/authSlice'
 import DashboardPage from '../../pages/dashboard-page/DashboardPage'
 
 describe('DashboardPage', () => {
