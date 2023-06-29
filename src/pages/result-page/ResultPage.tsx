@@ -22,8 +22,8 @@ const ResultPage = () => {
   const dispatch = useDispatch()
 
   // state variables
-  const [quizDataReturned, setQuizDataReturned] = useState(location.state?.quizData.business)
-  const [quizId, setQuizId] = useState(location.state?.quizData.quizId)
+  const [quizDataReturned, setQuizDataReturned] = useState(location.state?.quizData?.business)
+  const [quizId, setQuizId] = useState(location.state?.quizData?.quizId)
 
   const [isLoading, setIsLoading] = useState(false)
 
