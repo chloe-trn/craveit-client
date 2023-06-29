@@ -48,7 +48,7 @@ const ResultPage = () => {
     setError('')
     setIsError(false)
     dispatch(clearQuiz())
-    navigate('/quiz')
+    navigate('/questionnaire')
   }
 
   // when get directions is clicked, prepare data and open google map link

@@ -2,14 +2,13 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { selectAuth } from '../../services/auth/authSlice'
 
+import PrivateRoute from './PrivateRoute'
 import PageNotFound from '../../pages/error-pages/PageNotFound'
 import AuthorizationPage from '../../pages/authorization-page/AuthorizationPage'
 import DashboardPage from '../../pages/dashboard-page/DashboardPage'
-import PrivateRoute from './PrivateRoute'
 import PastResultsPage from '../../pages/past-results-page/PastResultsPage'
 import QuizPage from '../../pages/quiz-page/QuizPage'
 import ResultPage from '../../pages/result-page/ResultPage'
-import SettingsPage from '../../pages/settings-page/SettingsPage'
 
 const AppRoutes = () => {
   const { token } = useSelector(selectAuth)
@@ -40,7 +39,7 @@ const AppRoutes = () => {
           }
         />
         <Route
-          path="/quiz"
+          path="/questionnaire"
           element={
             <PrivateRoute>
               <QuizPage />
@@ -56,18 +55,10 @@ const AppRoutes = () => {
           }
         />
         <Route
-          path="/past-results"
+          path="/saved-results"
           element={
             <PrivateRoute>
               <PastResultsPage />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/settings"
-          element={
-            <PrivateRoute>
-              <SettingsPage />
             </PrivateRoute>
           }
         />

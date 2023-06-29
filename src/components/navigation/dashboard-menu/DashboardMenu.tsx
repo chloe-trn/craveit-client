@@ -1,14 +1,14 @@
 import './dashboard-menu.css'
+import { ReactNode} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { logOut } from '../../../services/auth/authSlice'
 import { toggleMenu } from '../../../services/menu/menuSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouseChimneyUser, faCircleQuestion, faRectangleList, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { faHouseChimneyUser, faUtensils, faRectangleList, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import List from '../../generic/List'
-import { ReactNode} from 'react'
 
-interface NavigationItem {
+type NavigationItem = {
   name: string
   path?: string
   icon?: ReactNode
@@ -36,13 +36,13 @@ const DashboardMenu = () => {
       icon: <FontAwesomeIcon icon={faHouseChimneyUser} />
     },
     {
-      name: 'Quiz',
-      path: '/quiz',
-      icon: <FontAwesomeIcon icon={faCircleQuestion} />
+      name: 'Satisfy Your Craving',
+      path: '/questionnaire',
+      icon: <FontAwesomeIcon icon={faUtensils} />
     },
     {
-      name: 'Past Results',
-      path: '/past-results',
+      name: 'Saved Cravings',
+      path: '/saved-results',
       icon: <FontAwesomeIcon icon={faRectangleList} />
     },
     {
