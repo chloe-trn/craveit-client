@@ -1,4 +1,4 @@
-import { Result } from '../helpers/types'
+import { Result } from '../../helpers/types'
 
 // mock data for testing 
 

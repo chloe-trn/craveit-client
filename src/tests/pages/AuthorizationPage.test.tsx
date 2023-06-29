@@ -1,5 +1,5 @@
 import { fireEvent } from '@testing-library/react'
-import { render, screen } from '../../test-utils/render-util'
+import { render, screen } from '../utils/custom-render'
 import AuthorizationPage from '../../pages/authorization-page/AuthorizationPage'
 
 jest.mock('react-router-dom', () => ({

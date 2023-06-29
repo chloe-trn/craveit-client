@@ -1,4 +1,4 @@
-import { render, screen } from '../../../test-utils/render-util'
+import { render, screen } from '../../utils/custom-render'
 import DashboardMenu from '../../../components/navigation/dashboard-menu/DashboardMenu'
 
 describe('DashboardMenu', () => {

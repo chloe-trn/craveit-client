@@ -1,4 +1,4 @@
-import { render, screen } from '../../test-utils/render-util'
+import { render, screen } from '../utils/custom-render'
 import { store } from '../../redux/store'
 import { setUser } from '../../redux/slices/authSlice'
 import DashboardPage from '../../pages/dashboard-page/DashboardPage'

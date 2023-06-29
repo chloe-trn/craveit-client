@@ -1,5 +1,5 @@
 import { render, act } from '@testing-library/react'
-import LoadingToRedirect from '../../../components/navigation/LoadingToRedirect'
+import LoadingToRedirect from '../../../components/navigation/loading/LoadingToRedirect'
 
 // Mock navigate function
 const mockNavigate = jest.fn();

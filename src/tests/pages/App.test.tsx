@@ -1,17 +1,21 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { store } from '../../redux/store'
 import App from '../../App'
 
 const renderApp = (initialEntries: string[]) => {
   render(
-    <MemoryRouter initialEntries={initialEntries}>
-      <App />
-    </MemoryRouter>
-  );
+    <Provider store={store}>
+      <MemoryRouter initialEntries={initialEntries}>
+        <App />
+      </MemoryRouter>
+    </Provider>
+  )
 }
 
 describe('App', () => {
-  test('does not render navigation elements when path is an initial page', () => {
+  it('does not render navigation elements when path is an initial page', () => {
     // arrange and act
     renderApp(['/'])
 
@@ -25,9 +29,9 @@ describe('App', () => {
     expect(loginLink).toBeInTheDocument()
   })
 
-  test('renders navigation elements when path is not one of the initial paths', () => {
+  it('renders navigation elements when path is not one of the initial paths', () => {
     // arrange and act
-    renderApp(['/about'])
+    renderApp(['/home'])
 
     const navigationElement = screen.getByTestId('navigation')
     const registerLink = screen.queryByTestId('register-btn')
