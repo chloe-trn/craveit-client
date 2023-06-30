@@ -13,6 +13,7 @@ const ProgressBar = ({ currentQuestion, totalQuestions }: ProgressBarProps ) => 
       <div
         className='progress-bar-container'
         role='progressbar'
+        aria-label='progress bar'
         aria-valuemin={1}
         aria-valuemax={totalQuestions}
         aria-valuenow={currentQuestion}
