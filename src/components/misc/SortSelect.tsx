@@ -38,7 +38,7 @@ const SortSelect = ({ orderBy, onSortChange }: SortSelectProps) => {
   }
 
   return (
-    <select onChange={(e) => onSortChange(e.target.value as 'asc' | 'dsc' | '')}>
+    <select id='sort' onChange={(e) => onSortChange(e.target.value as 'asc' | 'dsc' | '')}>
       {getSortOptions()}
     </select>
   )
