@@ -23,7 +23,7 @@
 }
 
 .result .column.left .btn {
-  margin: 17px 0;
+  margin: 18px 0;
 }
 
 .result .column svg {
@@ -53,10 +53,8 @@
 
   .result .column.right {
     width: 50%;
-  }
-
-  .result .map-container {
-    margin-top: 20px;
+    position: relative;
+    top: -55px;
   }
 
   .result .btn-wrapper {

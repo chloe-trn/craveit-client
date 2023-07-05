@@ -80,5 +80,13 @@
   .input-option {
     height: 90px;
   }
+
+  .quiz .btn-wrapper.three-btn {
+    flex-direction: row;
+  }
+
+  .quiz .inner-btn-wrapper .btn {
+    margin-left: 30px;
+  }
 }
   
