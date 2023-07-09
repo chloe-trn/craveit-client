@@ -5,8 +5,8 @@
 ## Features 
 ### User Login and Registration 
 <p align="top">
-<img src="/read_me/Registration-Error.jpg" width="425" height="472" align="top"/>
-<img src="/read_me/Login-Error.jpg" width="425" height="396" align="top"/>
+<img src="/read_me/Registration-Error.jpg" width="400" height="444" align="top"/>
+<img src="/read_me/Login-Error.jpg" width="400" height="372" align="top"/>
 </p>
 
 * Users are able to register for an account. If there is an issue with the provided information, an error message is shown.
@@ -40,9 +40,9 @@
 
 ### Questionnaire Result 
 ![Result](./read_me/Result.jpg)
-* Once the quiz is submitted, a result is calculated, and a result page is displayed with a tailored restaurant recommendation. The page shows the restaurant's name, rating, phone number, and more.
+* Once a questionnaire is submitted, a result page is displayed with a tailored restaurant recommendation. The page shows the restaurant's name, rating, phone number, and other information.
 * An interactive map with a pin on the restaurant's location is also provided, along with a link to Google Maps for directions. 
-* Users have the option to save the current result to appear in the "Saved Cravings" page or fetch another recommendation with the same questionnaire criteria.
+* Users have the option to save the current recommendation to appear in the "Saved Cravings" page or fetch another recommendation with the same questionnaire criteria.
 <br>
 
 ### Saved Results
@@ -64,11 +64,9 @@
 * The application is designed to be responsive from desktop to mobile devices. CSS media queries ensure that the layout and styling adapt to different screen sizes..
 <p align="middle">
 <img src="/read_me/Mobile-Login.jpg" width="250" height="545" />
-<img src="/read_me/Mobile-Register.jpg" width="250" height="545" />
 <img src="/read_me/Mobile-Navigation.jpg" width="250" height="545" />
 <img src="/read_me/Mobile-Autocomplete-Address-Search.jpg" width="250" height="545"  /> 
 <img src="/read_me/Mobile-Autocomplete-Map.jpg" width="250" height="545"  /> 
-<img src="/read_me/Mobile-Submit-Page.jpg" width="250" height="545"  /> 
 <img src="/read_me/Mobile-Result.jpg" width="250" height="545" />
 <img src="/read_me/Mobile-Saved-Results.jpg" width="250" height="545" />
 </p>
