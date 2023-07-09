@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+<h1 align="center">CraveIt</h1>
+<p align="center">An application designed to alleviate indecision by presenting users with a single, tailored restaurant recommendation, simplifying the process of finding a dining spot.</p>
+<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features 
+### User Login and Registration 
+<p align="top">
+<img src="/read_me/Registration-Error.jpg" width="425" height="472" align="top"/>
+<img src="/read_me/Login-Error.jpg" width="425" height="396" align="top"/>
+</p>
 
-## Available Scripts
+* Users are able to register for an account. If there is an issue with the provided information, an error message is shown.
+* Once registered, users can log in using their username and password. If the credentials are incorrect, an error message is shown.
+<br>
 
-In the project directory, you can run:
+### Unauthorized Pages
+![Unauthorized Page](./read_me/Unauthorized-Page.jpg)
+* If a user tries to access a restricted page without being logged in, they are automatically redirected to the login screen.
+<br>
+  
+### Home Page
+![Home Page](./read_me/Homepage.jpg)
+* The home page displays a welcome message, description of the application, and a bold call-to-action button to take the questionnaire.
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Questionnaire
+![Autocomplete Address Search](./read_me/Autocomplete-Address-Search.jpg)
+* The questionnaire consists of four questions, with the first one asking users about their location. As users start typing their address, an autocomplete recommendation feature is provided. 
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Autocomplete Map](./read_me/Autocomplete-Map.jpg)
+* Once the address is filled out, an interactive map is displayed on the right side, showing a pin on the input address for visual confirmation.
+<br>
 
-### `npm test`
+![Disabled Button](./read_me/Disabled-Button.jpg)
+* For each question, the "Next" button is disabled and greyed out until an answer is provided.
+* The progress bar at the top displays the current progress status as users proceed through the questionnaire.
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Questionnaire Result 
+![Result](./read_me/Result.jpg)
+* Once the quiz is submitted, a result is calculated, and a result page is displayed with a tailored restaurant recommendation. The page shows the restaurant's name, rating, phone number, and more.
+* An interactive map with a pin on the restaurant's location is also provided, along with a link to Google Maps for directions. 
+* Users have the option to save the current result to appear in the "Saved Cravings" page or fetch another recommendation with the same questionnaire criteria.
+<br>
 
-### `npm run build`
+### Saved Results
+![Saved Results](./read_me/Saved-Results.jpg)
+* The "Saved Results" page displays all the restaurant recommendations that have been saved by the user in a table.
+* The results are initially ordered from oldest to newest. 
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Order By](./read_me/Order-By.jpg)
+* Users have the option to order the table by restaurant name, rating, price range, or distance.
+* They can also choose to sort the table in ascending or descending order based on the selected "order by" option.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Delete Result](./read_me/Delete-Result.jpg)
+* Each result can be deleted by clicking on the trash icon, and a confirmation message is shown upon successful deletion.
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Responsive Design
+* The application is designed to be responsive from desktop to mobile devices. CSS media queries ensure that the layout and styling adapt to different screen sizes..
+<p align="middle">
+<img src="/read_me/Mobile-Login.jpg" width="250" height="545" />
+<img src="/read_me/Mobile-Register.jpg" width="250" height="545" />
+<img src="/read_me/Mobile-Navigation.jpg" width="250" height="545" />
+<img src="/read_me/Mobile-Autocomplete-Address-Search.jpg" width="250" height="545"  /> 
+<img src="/read_me/Mobile-Autocomplete-Map.jpg" width="250" height="545"  /> 
+<img src="/read_me/Mobile-Submit-Page.jpg" width="250" height="545"  /> 
+<img src="/read_me/Mobile-Result.jpg" width="250" height="545" />
+<img src="/read_me/Mobile-Saved-Results.jpg" width="250" height="545" />
+</p>
