@@ -6,7 +6,7 @@ import type { User, Quiz, Result } from '../helpers/types'
 export const clientApi = createApi({
   reducerPath: 'clientApi', 
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.REACT_DEV_SERVER_URL, 
+    baseUrl: 'https://localhost:7175/', 
     prepareHeaders: (headers, { getState }) => {
       const token = (getState() as RootState).auth.token
       // If we have a token set in state, let's assume that we should be passing it.
