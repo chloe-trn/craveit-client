@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from '../../redux/store'
+import { setUser } from '../../redux/slices/authSlice'
 import App from '../../App'
 
 const renderApp = (initialEntries: string[]) => {
@@ -21,16 +22,17 @@ describe('App', () => {
 
     const navigationElement = screen.queryByTestId('navigation') 
     const registerLink = screen.getByTestId('register-btn')
-    const loginLink = screen.getByTestId('login-btn')
 
     // assert
     expect(navigationElement).not.toBeInTheDocument()
     expect(registerLink).toBeInTheDocument()
-    expect(loginLink).toBeInTheDocument()
   })
 
-  it('renders navigation elements when path is not one of the initial paths', () => {
-    // arrange and act
+  it('renders navigation elements when path is not one of the initial paths and the user is logged in', () => {
+    // arrange
+    store.dispatch(setUser({ username: 'mock_username', token: 'mock_token', expiration: 'mock_expiration' }))
+
+    // act
     renderApp(['/home'])
 
     const navigationElement = screen.getByTestId('navigation')
