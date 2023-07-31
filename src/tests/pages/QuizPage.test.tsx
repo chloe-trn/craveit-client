@@ -3,9 +3,17 @@ import { render, screen } from '../utils/custom-render'
 import QuizPage from '../../pages/QuizPage'
 
 jest.mock('@mapbox/search-js-react', () => ({
-  AddressAutofill: jest.fn(),
-  AddressMinimap: jest.fn(),
-  config: { accessToken: 'mock_access_token'}
+  AddressAutofill: (props: any) => (
+    <input
+      id='street'
+      placeholder='start typing your address, e.g. 123 Main...'
+      autoComplete='address-line1'
+      onChange={(e) => props.onRetrieve({ features: [] })} 
+      required
+    />
+  ),
+  AddressMinimap: jest.fn(), 
+  config: { accessToken: 'mock_access_token' },
 }))
 
 describe('QuizPage', () => {
@@ -29,10 +37,10 @@ describe('QuizPage', () => {
     // assert
 
     // address question
-    fireEvent.change(screen.getByLabelText('Street Address'), { target: { value: '123 Test St' } })
+    fireEvent.change(screen.getByLabelText('Street'), { target: { value: '123 Test St' } })
     fireEvent.change(screen.getByLabelText('City'), { target: { value: 'Test City' } })
     fireEvent.change(screen.getByLabelText('State'), { target: { value: 'Test State' } })
-    fireEvent.change(screen.getByLabelText('Zip Code'), { target: { value: '12345' } })
+    fireEvent.change(screen.getByLabelText('Zipcode'), { target: { value: '12345' } })
     fireEvent.click(screen.getByText('Next'))
 
     // distance question
