@@ -90,7 +90,7 @@ describe('ResultPage', () => {
     it('fails to save spot', async () => {
       // arrange
       server.use(
-        rest.post(`${process.env.REACT_DEV_SERVER_URL}/api/results`, (req: RestRequest, res: ResponseComposition<any>, ctx: RestContext) => {
+        rest.post('https://localhost:7175/api/results', (req: RestRequest, res: ResponseComposition<any>, ctx: RestContext) => {
           return res(ctx.status(500))
         }),
       )

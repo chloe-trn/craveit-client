@@ -9,7 +9,7 @@ import {
 
 // set up mock server for testing
 
-const baseUrl = process.env.REACT_DEV_SERVER_URL
+const baseUrl = 'https://localhost:7175'
 
 export const handlers = [
   rest.post(`${baseUrl}/api/user/login`, (req: RestRequest, res: ResponseComposition<any>, ctx: RestContext) => {

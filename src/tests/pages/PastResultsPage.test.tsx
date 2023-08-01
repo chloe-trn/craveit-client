@@ -43,7 +43,7 @@ describe('PastResultsPage', () => {
       it('unsuccessfully delete item', async () => {
         // arrange 
         server.use(
-          rest.delete(`${process.env.REACT_DEV_SERVER_URL}/api/results/:id`, (req: RestRequest<{ id: string }>, res: ResponseComposition<any>, ctx: RestContext) => {
+          rest.delete('https://localhost:7175/api/results/:id', (req: RestRequest<{ id: string }>, res: ResponseComposition<any>, ctx: RestContext) => {
             return res(ctx.status(404))
           }),
         )
@@ -64,7 +64,7 @@ describe('PastResultsPage', () => {
     it('renders message when results are not available', async () => {
       // arrange
       server.use(
-        rest.get(`${process.env.REACT_DEV_SERVER_URL}/api/results`, (req: RestRequest, res: ResponseComposition<any>, ctx: RestContext) => {
+        rest.get('https://localhost:7175/api/results', (req: RestRequest, res: ResponseComposition<any>, ctx: RestContext) => {
           return res(ctx.status(404))
         }),
       )
