@@ -7,20 +7,18 @@ const LoadingToRedirect = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      // Start a countdown interval, update the count by decrementing it
+    if (count === 0) {
+      navigate('/auth')
+    }
+  }, [count, navigate])
+
+  useEffect(() => {
+    const timeout = setInterval(() => {
       setCount((currentCount) => currentCount - 1)
     }, 1000)
 
-    // Redirect to the specified route when count reaches 0
-    if (count === 0) {
-      clearInterval(interval)
-      navigate('/auth')
-    }
-
-    // Clear the interval when the component is unmounted or the count changes
-    return () => clearInterval(interval)
-  }, [count, navigate])
+    return () => clearInterval(timeout)
+  }, [])
 
   return (
     <>
