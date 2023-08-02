@@ -69,7 +69,7 @@ const App = () => {
           </main>
           <footer className='footer'>
             <div className='wrapper'>
-              &copy; 2023 Crave It.
+              &copy; Crave It.
             </div>
           </footer>
       </div>
